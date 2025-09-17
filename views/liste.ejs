@@ -1,0 +1,1373 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Liste di esercizi già fatti</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/styles/navbar.css">
+    <link rel="stylesheet" href="/styles/list.css">
+</head>
+
+<body>
+<!-- Include navbar -->
+<%- include('partials/navbar') %>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <h1 class="hero-title">
+            <i class="fas fa-list-check me-3"></i>
+            Liste Esercizi Disponibili
+        </h1>
+        <p class="hero-subtitle">
+            Accedi a tutti gli esercizi già preparati, organizzati per anno e materia
+        </p>
+    </div>
+</section>
+
+<!-- Main Content -->
+<div class="container main-content">
+    <!-- Search and Filter Bar -->
+    <div class="filter-section">
+        <div class="row g-3">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fas fa-search"></i></span>
+                    <input type="text" class="form-control" id="searchExercises" placeholder="Cerca esercizi...">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <select class="form-select" id="yearFilter">
+                    <option value="">Tutti gli anni</option>
+                    <option value="1">Primo anno</option>
+                    <option value="2">Secondo anno</option>
+                    <option value="3">Terzo anno</option>
+                    <option value="old">Vecchio Ordinamento</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-outline-primary w-100" onclick="resetFilters()">
+                    <i class="fas fa-redo me-2"></i>Reset Filtri
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exercises by Year -->
+    <div class="exercises-container">
+        <!-- Primo Anno -->
+        <div class="year-section" data-year="1">
+            <div class="year-header">
+                <h2>
+                    <i class="fas fa-graduation-cap me-2"></i>
+                    Primo Anno
+                </h2>
+                <span class="badge">7 materie</span>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Analisi">
+                        <div class="card-header">
+                            <h3>Analisi</h3>
+                            <span class="badge bg-info">12 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Esercizi su limiti, derivate, integrali e serie numeriche
+                            </p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 150 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~3h</span>
+                                <span><i class="fas fa-signal"></i> Medio-Alta</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Analisi')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Analisi')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Architettura degli elaboratori">
+                        <div class="card-header">
+                            <h3>Architettura degli Elaboratori</h3>
+                            <span class="badge bg-info">9 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Assembly, architetture RISC/CISC, memoria e cache
+                            </p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 120 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~2.5h</span>
+                                <span><i class="fas fa-signal"></i> Alta</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Architettura degli elaboratori')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Architettura degli elaboratori')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Fondamenti dell'Informatica">
+                        <div class="card-header">
+                            <h3>Fondamenti dell'Informatica</h3>
+                            <span class="badge bg-info">9 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Logica booleana, macchine di Turing, complessità computazionale
+                            </p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 100 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~2h</span>
+                                <span><i class="fas fa-signal"></i> Media</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Fondamenti dell\'Informatica')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Fondamenti dell\'Informatica')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Matematica Discreta, Algebra e Geometria">
+                        <div class="card-header">
+                            <h3>Matematica Discreta, Algebra e Geometria</h3>
+                            <span class="badge bg-info">12 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Teoria dei grafi, algebra lineare, geometria analitica
+                            </p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 180 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~4h</span>
+                                <span><i class="fas fa-signal"></i> Alta</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Matematica Discreta')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Matematica Discreta')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Programmazione I">
+                        <div class="card-header">
+                            <h3>Programmazione I</h3>
+                            <span class="badge bg-info">9 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Fondamenti di C, strutture dati base, algoritmi elementari
+                            </p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 200 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~3h</span>
+                                <span><i class="fas fa-signal"></i> Media</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Programmazione I')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Programmazione I')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Programmazione II">
+                        <div class="card-header">
+                            <h3>Programmazione II</h3>
+                            <span class="badge bg-info">9 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Java base, OOP introduttiva, collezioni e generics
+                            </p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 180 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~3h</span>
+                                <span><i class="fas fa-signal"></i> Media</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Programmazione II')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Programmazione II')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Ricerca Operativa">
+                        <div class="card-header">
+                            <h3>Ricerca Operativa</h3>
+                            <span class="badge bg-info">6 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Programmazione lineare, simplesso, problemi di ottimizzazione
+                            </p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 90 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~2h</span>
+                                <span><i class="fas fa-signal"></i> Alta</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Ricerca Operativa')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Ricerca Operativa')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Secondo Anno -->
+        <div class="year-section" data-year="2">
+            <div class="year-header">
+                <h2>
+                    <i class="fas fa-graduation-cap me-2"></i>
+                    Secondo Anno
+                </h2>
+                <span class="badge">9 materie</span>
+            </div>
+
+            <!-- Diritto e Privacy per l'Informatica -->
+            <div class="row g-4">
+                <!-- Algoritmi e Strutture Dati -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Algoritmi e Strutture Dati">
+                        <div class="card-header">
+                            <h3>Algoritmi e Strutture Dati</h3>
+                            <span class="badge bg-info">12 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">Alberi, grafi, algoritmi di ordinamento e ricerca</p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 250 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~4h</span>
+                                <span><i class="fas fa-signal"></i> Alta</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Algoritmi e Strutture Dati')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Algoritmi e Strutture Dati')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Basi di Dati -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Basi di Dati">
+                        <div class="card-header">
+                            <h3>Basi di Dati</h3>
+                            <span class="badge bg-info">9 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">SQL, modello ER, normalizzazione, transazioni</p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 160 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~3h</span>
+                                <span><i class="fas fa-signal"></i> Media</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Basi di Dati')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Basi di Dati')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sistemi Operativi -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Sistemi Operativi">
+                        <div class="card-header">
+                            <h3>Sistemi Operativi</h3>
+                            <span class="badge bg-info">9 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">Processi, thread, scheduling, memoria virtuale</p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 140 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~2.5h</span>
+                                <span><i class="fas fa-signal"></i> Alta</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Sistemi Operativi')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Sistemi Operativi')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Diritto e Privacy per l'Informatica -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Diritto e Privacy per l'Informatica">
+                        <div class="card-header">
+                            <h3>Diritto e Privacy per l'Informatica</h3>
+                            <span class="badge bg-info">6 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">Normative GDPR, protezione dati, aspetti legali</p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 80 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~1.5h</span>
+                                <span><i class="fas fa-signal"></i> Bassa</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Diritto e Privacy per l\'Informatica')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Diritto e Privacy per l\'Informatica')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Economia e Gestione dell'Impresa -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Economia e Gestione dell'Impresa">
+                        <div class="card-header">
+                            <h3>Economia e Gestione dell'Impresa</h3>
+                            <span class="badge bg-info">6 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">Business model, analisi costi-ricavi, gestione progetti IT</p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 70 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~1.5h</span>
+                                <span><i class="fas fa-signal"></i> Bassa</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Economia e Gestione dell\'Impresa')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Economia e Gestione dell\'Impresa')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Elementi di Probabilità e Statistica -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Elementi di Probabilità e Statistica">
+                        <div class="card-header">
+                            <h3>Elementi di Probabilità e Statistica</h3>
+                            <span class="badge bg-info">6 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">Distribuzioni, test ipotesi, analisi dati con R/Python</p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 120 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~2.5h</span>
+                                <span><i class="fas fa-signal"></i> Media</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Elementi di Probabilità e Statistica')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Elementi di Probabilità e Statistica')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fisica -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Fisica">
+                        <div class="card-header">
+                            <h3>Fisica</h3>
+                            <span class="badge bg-info">6 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">Meccanica classica, elettromagnetismo, fisica moderna</p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 100 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~2h</span>
+                                <span><i class="fas fa-signal"></i> Media</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Fisica')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Fisica')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Logica Matematica -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Logica Matematica">
+                        <div class="card-header">
+                            <h3>Logica Matematica</h3>
+                            <span class="badge bg-info">6 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">Teoremi di incompletezza, logica proposizionale</p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 90 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~2h</span>
+                                <span><i class="fas fa-signal"></i> Alta</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Logica Matematica')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Logica Matematica')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Principi di Programmazione Orientata agli Oggetti -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Principi di Programmazione Orientata agli Oggetti">
+                        <div class="card-header">
+                            <h3>Principi di Programmazione OO</h3>
+                            <span class="badge bg-info">9 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">Design pattern, UML, Java/C++ avanzato</p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 180 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~3.5h</span>
+                                <span><i class="fas fa-signal"></i> Alta</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Principi di Programmazione Orientata agli Oggetti')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Principi di Programmazione Orientata agli Oggetti')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Terzo Anno -->
+        <div class="year-section" data-year="3">
+            <div class="year-header">
+                <h2>
+                    <i class="fas fa-graduation-cap me-2"></i>
+                    Terzo Anno
+                </h2>
+                <span class="badge">20+ materie</span>
+            </div>
+            <div class="row g-4">
+                <!-- Blockchain -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Blockchain">
+                        <div class="card-header">
+                            <h3>Blockchain</h3>
+                            <span class="badge bg-info">6 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Smart contract, Ethereum, crittografia per blockchain
+                            </p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 100 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~2h</span>
+                                <span><i class="fas fa-signal"></i> Alta</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Blockchain')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Blockchain')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Calcolabilità e Complessità -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Calcolabilità e Complessità">
+                        <div class="card-header">
+                            <h3>Calcolabilità e Complessità</h3>
+                            <span class="badge bg-info">6 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Classi P/NP, macchine di Turing, riducibilità
+                            </p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 90 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~2h</span>
+                                <span><i class="fas fa-signal"></i> Alta</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Calcolabilità e Complessità')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Calcolabilità e Complessità')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cybersecurity -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Cybersecurity">
+                        <div class="card-header">
+                            <h3>Cybersecurity</h3>
+                            <span class="badge bg-info">6 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Crittografia, attacchi informatici, sicurezza delle reti
+                            </p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 130 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~2.5h</span>
+                                <span><i class="fas fa-signal"></i> Alta</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Cybersecurity')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Cybersecurity')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Economia e Gestione delle Tecnologie Emergenti -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Economia e Gestione delle Tecnologie Emergenti">
+                        <div class="card-header">
+                            <h3>Economia e Gestione delle Tecnologie Emergenti</h3>
+                            <span class="badge bg-info">6 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Innovazione tecnologica, startup, analisi di mercato
+                            </p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 70 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~1.5h</span>
+                                <span><i class="fas fa-signal"></i> Bassa</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Economia e Gestione delle Tecnologie Emergenti')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Economia e Gestione delle Tecnologie Emergenti')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Human-Computer Interaction -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Human-Computer Interaction">
+                        <div class="card-header">
+                            <h3>Human-Computer Interaction</h3>
+                            <span class="badge bg-info">6 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Usabilità, design UI/UX, prototipazione
+                            </p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 80 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~1.5h</span>
+                                <span><i class="fas fa-signal"></i> Media</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Human-Computer Interaction')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Human-Computer Interaction')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Linguaggi e Paradigmi di Programmazione -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Linguaggi e Paradigmi di Programmazione">
+                        <div class="card-header">
+                            <h3>Linguaggi e Paradigmi di Programmazione</h3>
+                            <span class="badge bg-info">6 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Programmazione funzionale, logica, concorrente
+                            </p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 110 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~2h</span>
+                                <span><i class="fas fa-signal"></i> Alta</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Linguaggi e Paradigmi di Programmazione')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Linguaggi e Paradigmi di Programmazione')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Linguaggi Formali e Traduttori -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Linguaggi Formali e Traduttori">
+                        <div class="card-header">
+                            <h3>Linguaggi Formali e Traduttori</h3>
+                            <span class="badge bg-info">9 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Grammatiche, automi, compilatori (Lex/Yacc)
+                            </p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 150 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~3h</span>
+                                <span><i class="fas fa-signal"></i> Alta</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Linguaggi Formali e Traduttori')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Linguaggi Formali e Traduttori')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Logica per l'Informatica -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Logica per l'Informatica">
+                        <div class="card-header">
+                            <h3>Logica per l'Informatica</h3>
+                            <span class="badge bg-info">6 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Logica modale, dimostrazioni automatiche, applicazioni in IA
+                            </p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 90 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~2h</span>
+                                <span><i class="fas fa-signal"></i> Alta</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Logica per l\'Informatica')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Logica per l\'Informatica')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Metodi Formali dell'Informatica -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Metodi Formali dell'Informatica">
+                        <div class="card-header">
+                            <h3>Metodi Formali dell'Informatica</h3>
+                            <span class="badge bg-info">6 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Verifica formale, model checking, specifiche temporali
+                            </p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 100 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~2h</span>
+                                <span><i class="fas fa-signal"></i> Alta</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Metodi Formali dell\'Informatica')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Metodi Formali dell\'Informatica')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Metodi Numerici -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Metodi Numerici">
+                        <div class="card-header">
+                            <h3>Metodi Numerici</h3>
+                            <span class="badge bg-info">6 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Approssimazione, interpolazione, risoluzione numerica di equazioni
+                            </p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 120 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~2.5h</span>
+                                <span><i class="fas fa-signal"></i> Media</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Metodi Numerici')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Metodi Numerici')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Metodologie e Tecnologie Didattiche per l'Informatica (PREFIT) -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Metodologie e Tecnologie Didattiche per l'Informatica">
+                        <div class="card-header">
+                            <h3>Metodologie Didattiche (PREFIT)</h3>
+                            <span class="badge bg-info">6 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Didattica dell'informatica, strumenti per l'insegnamento
+                            </p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 60 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~1h</span>
+                                <span><i class="fas fa-signal"></i> Bassa</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Metodologie e Tecnologie Didattiche per l\'Informatica')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Metodologie e Tecnologie Didattiche per l\'Informatica')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Problem Solving Avanzato -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Problem Solving Avanzato">
+                        <div class="card-header">
+                            <h3>Problem Solving Avanzato</h3>
+                            <span class="badge bg-info">6 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Algoritmi competitivi, ottimizzazione, coding challenges
+                            </p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 200 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~4h</span>
+                                <span><i class="fas fa-signal"></i> Alta</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Problem Solving Avanzato')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Problem Solving Avanzato')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Programmazione III -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Programmazione III">
+                        <div class="card-header">
+                            <h3>Programmazione III</h3>
+                            <span class="badge bg-info">6 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Sviluppo web full-stack, framework moderni (React, Node.js)
+                            </p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 160 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~3h</span>
+                                <span><i class="fas fa-signal"></i> Media</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Programmazione III')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Programmazione III')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reti e Sicurezza delle Reti + Complementi di Reti -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Reti e Sicurezza delle Reti">
+                        <div class="card-header">
+                            <h3>Reti e Sicurezza delle Reti</h3>
+                            <span class="badge bg-info">12 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Protocolli TCP/IP, firewall, crittografia di rete
+                            </p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 180 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~3.5h</span>
+                                <span><i class="fas fa-signal"></i> Alta</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Reti e Sicurezza delle Reti')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Reti e Sicurezza delle Reti')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sistemi Informativi -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Sistemi Informativi">
+                        <div class="card-header">
+                            <h3>Sistemi Informativi</h3>
+                            <span class="badge bg-info">6 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                ERP, CRM, gestione dati aziendali
+                            </p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 70 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~1.5h</span>
+                                <span><i class="fas fa-signal"></i> Bassa</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Sistemi Informativi')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Sistemi Informativi')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sistemi Intelligenti -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Sistemi Intelligenti">
+                        <div class="card-header">
+                            <h3>Sistemi Intelligenti</h3>
+                            <span class="badge bg-info">6 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Intelligenza artificiale, machine learning, reti neurali
+                            </p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 140 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~3h</span>
+                                <span><i class="fas fa-signal"></i> Alta</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Sistemi Intelligenti')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Sistemi Intelligenti')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Storia dell'Informatica -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Storia dell'Informatica">
+                        <div class="card-header">
+                            <h3>Storia dell'Informatica</h3>
+                            <span class="badge bg-info">6 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Evoluzione dei computer, figure storiche, innovazioni chiave
+                            </p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 50 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~1h</span>
+                                <span><i class="fas fa-signal"></i> Bassa</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Storia dell\'Informatica')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Storia dell\'Informatica')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sviluppo delle Applicazioni Software -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Sviluppo delle Applicazioni Software">
+                        <div class="card-header">
+                            <h3>Sviluppo delle Applicazioni Software</h3>
+                            <span class="badge bg-info">6 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Ingegneria del software, testing, DevOps
+                            </p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 130 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~2.5h</span>
+                                <span><i class="fas fa-signal"></i> Media</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Sviluppo delle Applicazioni Software')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Sviluppo delle Applicazioni Software')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tecnologie Web -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Tecnologie Web">
+                        <div class="card-header">
+                            <h3>Tecnologie Web</h3>
+                            <span class="badge bg-info">6 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                HTML/CSS/JS avanzato, framework frontend, API REST
+                            </p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 150 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~3h</span>
+                                <span><i class="fas fa-signal"></i> Media</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Tecnologie Web')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Tecnologie Web')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Percorsi Vecchio Ordinamento (esempio) -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Linguaggi e Sistemi">
+                        <div class="card-header">
+                            <h3>Linguaggi e Sistemi (Vecchio Ordinamento)</h3>
+                            <span class="badge bg-info">12 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Teoria dei linguaggi, sistemi distribuiti, legacy code
+                            </p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 170 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~3h</span>
+                                <span><i class="fas fa-signal"></i> Alta</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Linguaggi e Sistemi')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Linguaggi e Sistemi')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Vecchio Ordinamento -->
+        <div class="year-section" data-year="vecchio-ordinamento">
+            <div class="year-header">
+                <h2>
+                    <i class="fas fa-archive me-2"></i>
+                    Vecchio Ordinamento
+                </h2>
+                <span class="badge">10+ materie</span>
+            </div>
+            <div class="row g-4">
+                <!-- Linguaggi e Sistemi -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Linguaggi e Sistemi">
+                        <div class="card-header">
+                            <h3>Linguaggi e Sistemi</h3>
+                            <span class="badge bg-info">12 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Teoria dei linguaggi formali, sistemi operativi avanzati, compilatori
+                            </p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 180 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~3.5h</span>
+                                <span><i class="fas fa-signal"></i> Alta</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Linguaggi e Sistemi')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Linguaggi e Sistemi')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Informazione e Conoscenza -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Informazione e Conoscenza">
+                        <div class="card-header">
+                            <h3>Informazione e Conoscenza</h3>
+                            <span class="badge bg-info">9 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Basi di dati avanzate, ontologie, gestione della conoscenza
+                            </p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 140 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~2.5h</span>
+                                <span><i class="fas fa-signal"></i> Media</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Informazione e Conoscenza')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Informazione e Conoscenza')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reti e Sistemi -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Reti e Sistemi">
+                        <div class="card-header">
+                            <h3>Reti e Sistemi</h3>
+                            <span class="badge bg-info">12 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Reti di calcolatori, protocolli avanzati, sicurezza di rete
+                            </p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 200 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~4h</span>
+                                <span><i class="fas fa-signal"></i> Alta</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Reti e Sistemi')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Reti e Sistemi')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interazione Uomo Macchina e Tecnologie Web (9CFU) -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Interazione Uomo Macchina e Tecnologie Web">
+                        <div class="card-header">
+                            <h3>Interazione Uomo Macchina e Tecnologie Web</h3>
+                            <span class="badge bg-info">9 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Usabilità, design di interfacce, sviluppo web full-stack
+                            </p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 160 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~3h</span>
+                                <span><i class="fas fa-signal"></i> Media</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Interazione Uomo Macchina e Tecnologie Web')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Interazione Uomo Macchina e Tecnologie Web')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reti (6 CFU) -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Reti (6 CFU)">
+                        <div class="card-header">
+                            <h3>Reti (6 CFU)</h3>
+                            <span class="badge bg-info">6 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Fondamenti di reti: modello OSI, TCP/IP, routing
+                            </p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 100 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~2h</span>
+                                <span><i class="fas fa-signal"></i> Media</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Reti (6 CFU)')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Reti (6 CFU)')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reti (12 CFU) -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Reti (12 CFU)">
+                        <div class="card-header">
+                            <h3>Reti (12 CFU)</h3>
+                            <span class="badge bg-info">12 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Reti avanzate: protocolli applicativi, sicurezza, QoS
+                            </p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 180 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~3.5h</span>
+                                <span><i class="fas fa-signal"></i> Alta</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Reti (12 CFU)')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Reti (12 CFU)')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Insegnamenti aggiuntivi (esempio: Reti (9 CFU IUM) -->
+                <div class="col-lg-6">
+                    <div class="exercise-card" data-subject="Interazione Uomo Macchina (9 CFU IUM)">
+                        <div class="card-header">
+                            <h3>Interazione Uomo Macchina (9 CFU IUM)</h3>
+                            <span class="badge bg-info">9 CFU</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-description">
+                                Progettazione di interfacce, accessibilità, valutazione usabilità
+                            </p>
+                            <div class="exercise-stats">
+                                <span><i class="fas fa-tasks"></i> 120 esercizi</span>
+                                <span><i class="fas fa-clock"></i> ~2.5h</span>
+                                <span><i class="fas fa-signal"></i> Media</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-action" onclick="playExercises('Interazione Uomo Macchina (9 CFU IUM)')">
+                                <i class="fas fa-play me-2"></i>Inizia
+                            </button>
+                            <button class="btn btn-primary btn-action" onclick="downloadExercises('Interazione Uomo Macchina (9 CFU IUM)')">
+                                <i class="fas fa-download me-2"></i>Scarica
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Features Section -->
+<section class="features-section">
+    <div class="container">
+        <h2 class="text-center mb-5">Caratteristiche Principali</h2>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="feature-item">
+                    <i class="fas fa-book-open feature-icon"></i>
+                    <h4 class="feature-title">43</h4>
+                    <p class="feature-description">
+                        Materie Totali
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="feature-item">
+                    <i class="fas fa-pen-to-square feature-icon"></i>
+                    <h4 class="feature-title">3,500+</h4>
+                    <p class="feature-description">
+                        Esercizi Disponibili
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="feature-item">
+                    <i class="fas fa-clock feature-icon"></i>
+                    <h4 class="feature-title">~60h</h4>
+                    <p class="feature-description">
+                        Tempo Totale
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="feature-item">
+                    <i class="fas fa-graduation-cap feature-icon"></i>
+                    <h4 class="feature-title">180</h4>
+                    <p class="feature-description">
+                        CFU Coperti
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Loading Modal -->
+<div class="modal fade" id="loadingModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body text-center p-5">
+                <div class="spinner-border text-primary mb-3" style="width: 3rem; height: 3rem;"></div>
+                <h5 id="loadingText">Caricamento in corso...</h5>
+                <p class="text-muted mb-0" id="loadingSubtext">Preparazione degli esercizi</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Toast Container -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <i class="fas fa-info-circle me-2 text-primary"></i>
+            <strong class="me-auto">Notifica</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+        </div>
+        <div class="toast-body" id="toastMessage">
+            Messaggio di notifica
+        </div>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/scripts/list.js"></script>
+</body>
+</html>
