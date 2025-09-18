@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Builder</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Navbar CSS - DOPO Bootstrap per sovrascrivere -->
+    <link rel="stylesheet" href="styles/crea.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+</head>
+
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <!-- Brand -->
+        <a class="navbar-brand fw-bold" href="index.html">UniStudy</a>
+
+        <!-- Menu
+        <div class="navbar-nav me-auto">
+            <a class="nav-link" href="list.html">Lista</a>
+        </div>-->
+
+        <!-- Telegram link -->
+        <div class="navbar-nav">
+            <a class="nav-link" href="https://t.me/+2Xb5sJ5FaXQwZWE0" target="_blank">
+                <i class="fab fa-telegram-plane"></i>
+            </a>
+        </div>
+    </div>
+</nav>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 ">
+
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <header class="text-center mb-8">
+            <div class="flex items-center justify-center mb-4">
+                <i class="fas fa-shield-alt text-4xl text-blue-600 mr-3"></i>
+                <h1 class="text-4xl font-bold text-gray-800">Exercise Builder</h1>
+            </div>
+            <p class="text-gray-600 text-lg">Crea esercizi interattivi con immagini embeddate</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Form di creazione -->
+            <div class="lg:col-span-2">
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-plus-circle text-green-600 mr-2"></i>
+                        <h2 class="text-xl font-semibold">Crea Nuovo Esercizio</h2>
+                    </div>
+
+                    <!-- Informazioni corso -->
+                    <div class="form-section bg-blue-50 border-blue-200">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">
+                                    <i class="fas fa-book mr-1"></i> Nome Corso
+                                </label>
+                                <input type="text" id="course-name" class="w-full p-2 border rounded-md" placeholder="Es: Sicurezza Informatica, Matematica, Storia...">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">
+                                    <i class="fas fa-hashtag mr-1"></i> ID Esercizio
+                                </label>
+                                <input type="number" id="exercise-id" class="w-full p-2 border rounded-md" value="1" readonly>
+                                <div class="text-xs text-gray-500 mt-1">Auto-incrementa automaticamente</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tipo di esercizio -->
+                    <div class="form-section">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">
+                            <i class="fas fa-list mr-1"></i> Tipo di esercizio
+                        </label>
+                        <select id="exercise-type" class="w-full p-2 border rounded-md">
+                            <option value="">Seleziona un tipo...</option>
+                            <option value="multiple_choice_single">🔘 Scelta Multipla Singola</option>
+                            <option value="multiple_choice_multiple">☑️ Scelta Multipla</option>
+                            <option value="true_false">✅ Vero o Falso</option>
+                            <option value="open_text">📝 Testo Aperto</option>
+                            <option value="fill_in_blank">📋 Riempimento Spazi</option>
+                            <option value="matching">🔗 Abbinamento</option>
+                            <option value="ordering">📊 Ordinamento</option>
+                            <option value="code_completion">💻 Completamento Codice</option>
+                            <option value="drag_and_drop">🎯 Trascinamento</option>
+                        </select>
+                    </div>
+
+                    <!-- Form dinamico -->
+                    <div id="exercise-form-container"></div>
+
+                    <!-- Immagine con supporto completo -->
+                    <div class="form-section bg-purple-50 border-purple-200">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-image text-purple-600 mr-2"></i>
+                            <label class="block text-sm font-medium text-gray-700">Immagine (opzionale)</label>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <input type="file" id="exercise-image" accept="image/*" class="w-full p-2 border rounded-md">
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                                <div>
+                                    <label class="block text-xs font-medium text-gray-600 mb-1">Testo alternativo</label>
+                                    <input type="text" id="image-alt" class="w-full p-1.5 text-sm border rounded-md" placeholder="Descrizione per accessibilità">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-medium text-gray-600 mb-1">Didascalia</label>
+                                    <input type="text" id="image-caption" class="w-full p-1.5 text-sm border rounded-md" placeholder="Didascalia opzionale">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-medium text-gray-600 mb-1">Larghezza</label>
+                                    <select id="image-width" class="w-full p-1.5 text-sm border rounded-md">
+                                        <option value="400px">400px</option>
+                                        <option value="500px" selected>500px</option>
+                                        <option value="600px">600px</option>
+                                        <option value="700px">700px</option>
+                                        <option value="100%">100% (responsive)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Ottimizzazione immagine -->
+                            <div class="grid grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block text-xs font-medium text-gray-600 mb-1">Larghezza max (px)</label>
+                                    <input type="number" id="max-width" class="w-full p-1.5 text-sm border rounded-md" value="800" min="200" max="1200">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-medium text-gray-600 mb-1">Qualità (0.1-1.0)</label>
+                                    <input type="number" id="image-quality" class="w-full p-1.5 text-sm border rounded-md" value="0.8" min="0.1" max="1.0" step="0.1">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="image-preview-container" class="hidden mt-4">
+                            <div class="image-container">
+                                <img id="image-preview" class="image-preview" alt="Anteprima">
+                                <div class="image-overlay" id="remove-image" title="Rimuovi immagine">
+                                    <i class="fas fa-times"></i>
+                                </div>
+                            </div>
+                            <div id="image-info" class="file-size-info mt-2"></div>
+                        </div>
+                    </div>
+
+                    <!-- Pulsanti -->
+                    <div class="flex gap-3 mt-6">
+                        <button id="add-exercise" class="flex-1 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors">
+                            <i class="fas fa-plus mr-2"></i> Aggiungi Esercizio
+                        </button>
+                        <button id="preview-exercise" class="bg-purple-600 text-white py-2 px-4 rounded-md hover:bg-purple-700 transition-colors">
+                            <i class="fas fa-eye mr-2"></i> Anteprima
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar con controlli -->
+            <div class="space-y-6">
+                <!-- Controlli export/import -->
+                <div class="bg-white p-4 rounded-xl shadow-lg">
+                    <h3 class="font-semibold mb-3 flex items-center">
+                        <i class="fas fa-cog text-gray-600 mr-2"></i> Controlli
+                    </h3>
+                    <div class="space-y-2">
+                        <button id="export-json" class="w-full bg-green-600 text-white py-2 px-3 rounded-md hover:bg-green-700 transition-colors text-sm">
+                            <i class="fas fa-download mr-2"></i> Esporta JSON
+                        </button>
+                        <button id="import-json" class="w-full bg-gray-600 text-white py-2 px-3 rounded-md hover:bg-gray-700 transition-colors text-sm">
+                            <i class="fas fa-upload mr-2"></i> Importa JSON
+                        </button>
+                        <button id="clear-all" class="w-full bg-red-600 text-white py-2 px-3 rounded-md hover:bg-red-700 transition-colors text-sm">
+                            <i class="fas fa-trash mr-2"></i> Pulisci Tutto
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Statistiche -->
+                <div class="bg-white p-4 rounded-xl shadow-lg">
+                    <h3 class="font-semibold mb-3 flex items-center">
+                        <i class="fas fa-chart-bar text-blue-600 mr-2"></i> Statistiche
+                    </h3>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span>Totale esercizi:</span>
+                            <span id="total-exercises" class="font-medium">0</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Con immagini:</span>
+                            <span id="exercises-with-images" class="font-medium">0</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Punti totali:</span>
+                            <span id="total-points" class="font-medium">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lista esercizi -->
+        <div class="mt-8">
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-semibold flex items-center">
+                        <i class="fas fa-list-ul text-blue-600 mr-2"></i> Esercizi Creati
+                    </h2>
+                    <div class="text-sm text-gray-500" id="exercises-count">0 esercizi</div>
+                </div>
+                <div id="exercises-list" class="space-y-3"></div>
+            </div>
+        </div>
+
+        <!-- Output JSON (collassabile) -->
+        <div class="mt-6">
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+                <div class="flex items-center justify-between mb-4 cursor-pointer" onclick="toggleJsonOutput()">
+                    <h2 class="text-xl font-semibold flex items-center">
+                        <i class="fas fa-code text-green-600 mr-2"></i> Output JSON
+                    </h2>
+                    <i id="json-toggle-icon" class="fas fa-chevron-down text-gray-400"></i>
+                </div>
+                <div id="json-output-container" class="hidden">
+                    <div class="flex justify-end mb-2">
+                        <button id="copy-json" class="text-sm bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded">
+                            <i class="fas fa-copy mr-1"></i> Copia JSON
+                        </button>
+                    </div>
+                    <textarea id="json-output" rows="12" class="w-full p-3 border rounded-md font-mono text-sm bg-gray-50" readonly></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast notifications -->
+    <div id="toast-container"></div>
+
+    <!-- Modal anteprima -->
+    <div id="preview-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-4 border-b flex justify-between items-center">
+                <h3 class="font-semibold">Anteprima Esercizio</h3>
+                <button id="close-preview" class="text-gray-400 hover:text-gray-600">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="preview-content" class="p-4"></div>
+        </div>
+    </div>
+
+
+</body>
+<script src="scripts/crea.js"></script>
+</html>
