@@ -66,19 +66,19 @@ class ExerciseRenderer {
     renderControls() {
         return `
             <div class="exercise-controls mt-4">
-                <button onclick="ExerciseManager.checkAnswer(${this.exerciseId}, this)" 
+                <button onclick="checkAnswer(${this.exerciseId}, this)" 
                         class="btn btn-primary check-answer">
                     <i class="fas fa-check me-2"></i>
                     Controlla Risposta
                 </button>
                 ${this.exercise.hint ? `
-                    <button onclick="ExerciseManager.showHint(${this.exerciseId})" 
+                    <button onclick="showHint(${this.exerciseId})" 
                             class="btn btn-outline-secondary ms-2">
                         <i class="fas fa-lightbulb me-2"></i>
                         Suggerimento
                     </button>
                 ` : ''}
-                <button onclick="ExerciseManager.resetExercise(${this.exerciseId})" 
+                <button onclick="resetExercise(${this.exerciseId})" 
                         class="btn btn-outline-warning ms-2">
                     <i class="fas fa-redo me-2"></i>
                     Reset
