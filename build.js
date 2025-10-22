@@ -178,7 +178,7 @@ const updateNavigationFunctions = () => {
             const pattern3 = /window\.location\.href\s*=\s*['"]([^'"\/\.]*)['"]/g;
             jsContent = jsContent.replace(pattern3, (match, path) => {
                 // Solo se è uno dei nostri path conosciuti
-                if (['exercise', 'crea', 'list', 'liste'].includes(path)) {
+                if (['exercise', 'crea', 'list'].includes(path)) {
                     hasChanges = true;
                     return `window.location.href = '${path}.html'`;
                 }
@@ -225,7 +225,7 @@ console.log('\n📄 Processando template EJS...');
 processTemplate('index', 'index');
 processTemplate('exercise', 'exercise');
 processTemplate('crea', 'crea');
-processTemplate('liste', 'liste');
+processTemplate('list', 'list');
 
 // Aggiorna le funzioni di navigazione JavaScript
 updateNavigationFunctions();
@@ -243,7 +243,7 @@ Questa cartella contiene i file statici generati per il deployment su GitHub Pag
 - \`index.html\` - Homepage principale
 - \`exercise.html\` - Pagina per svolgere gli esercizi
 - \`crea.html\` - Pagina per creare nuovi esercizi
-- \`liste.html\` - Pagina con le liste degli esercizi disponibili
+- \`list.html\` - Pagina con le liste degli esercizi disponibili
 
 ## Cartelle:
 - \`styles/\` - File CSS
@@ -261,7 +261,7 @@ console.log('dist/');
 console.log('├── index.html');
 console.log('├── exercise.html');
 console.log('├── crea.html');
-console.log('├── liste.html');
+console.log('├── list.html');
 if (fs.existsSync('./dist/styles')) console.log('├── styles/');
 if (fs.existsSync('./dist/scripts')) console.log('├── scripts/');
 console.log('├── .nojekyll');

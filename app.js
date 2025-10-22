@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 
 // Route per una lista
 app.get('/list', (req, res) => {
-    res.render('liste', { title: 'Study' });
+    res.render('list', { title: 'Study' });
 });
 
 // Route per la pagina degli esercizi

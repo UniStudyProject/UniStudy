@@ -762,6 +762,13 @@ body {
     body {
         background: #101923;
     }
+    .hero-section{
+        background: #101923;
+    }
+    .choice-section{
+        background: #101923;
+    }
+    
     .choice-card {
         background: rgba(30, 41, 59, 0.95);
         color: #e2e8f0;
