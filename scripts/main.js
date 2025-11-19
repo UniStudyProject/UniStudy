@@ -44,12 +44,7 @@ function initializeEventListeners() {
 
 // ===== NAVIGAZIONE =====
 function goToBuilder() {
-    showLoadingOverlay('Caricamento Exercise Builder...');
-
-    // Simula un breve caricamento per UX migliore
-    setTimeout(() => {
-        window.location.href = '/crea'; // O il percorso corretto del tuo builder
-    }, 500);
+    window.location.href = '/crea';
 }
 
 function openUploadModal() {
@@ -490,13 +485,7 @@ function setupDragAndDrop() {
     });
 }
 
-function showLoadingOverlay(message = 'Caricamento...') {
-    const overlay = document.getElementById('loadingOverlay');
-    if (overlay) {
-        overlay.querySelector('p').textContent = message;
-        overlay.classList.remove('d-none');
-    }
-}
+
 
 function hideLoadingOverlay() {
     const overlay = document.getElementById('loadingOverlay');
@@ -517,7 +506,7 @@ function startExercisesFromJSON() {
 
     console.log('Exercise data found:', uploadedExerciseData);
 
-    showLoadingOverlay('Preparazione esercizi...');
+    
 
     try {
         // Store data for exercise page with a flag
