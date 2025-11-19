@@ -366,3 +366,58 @@ body {
     font-size: 0.8rem;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
+
+/* ===== COMING SOON STATE ===== */
+
+/* Classe da aggiungere al div .exercise-card */
+.exercise-card.coming-soon {
+    pointer-events: none; /* Disabilita click su bottoni e card */
+    user-select: none;    /* Impedisce la selezione del testo */
+    cursor: not-allowed;
+}
+
+/* Sfumiamo e opacizziamo il contenuto interno per dare focus alla scritta */
+.exercise-card.coming-soon .card-header,
+.exercise-card.coming-soon .card-body,
+.exercise-card.coming-soon .card-footer {
+    opacity: 0.3;
+    filter: blur(1.5px); /* Leggero sfocamento */
+}
+
+/* Creazione del Badge Coming Soon */
+/* Nota: Sovrascrive l'effetto ::after originale (luce radiale) che non serve se la card è disattivata */
+.exercise-card.coming-soon::after {
+    content: 'COMING SOON'; /* Testo del badge */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-5deg); /* Centrato e leggermente ruotato */
+    
+    /* Stile del Badge */
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: var(--light-color); /* Testo giallo/arancio per risaltare */
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    
+    /* Ombra e Bordi */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    z-index: 50; /* Assicura che sia sopra tutto */
+    
+    /* Reset delle proprietà originali di ::after per evitare conflitti */
+    width: auto;
+    height: auto;
+    right: auto;
+}
+
+/* Rimuoviamo l'effetto hover di ingrandimento se è coming soon */
+.exercise-card.coming-soon:hover {
+    transform: none;
+    box-shadow: var(--shadow);
+}
