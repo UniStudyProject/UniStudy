@@ -6,38 +6,96 @@
     --warning-color: #f59e0b;
     --danger-color: #ef4444;
     --info-color: #06b6d4;
+    
+    /* Palette Neutra Base */
     --dark-color: #1f2937;
     --light-color: #f8fafc;
-
-    --gray-50: #f9fafb;
-    --gray-100: #f3f4f6;
     --gray-200: #e5e7eb;
-    --gray-300: #d1d5db;
-    --gray-400: #9ca3af;
-    --gray-500: #6b7280;
     --gray-600: #4b5563;
-    --gray-700: #374151;
-    --gray-800: #1f2937;
-    --gray-900: #111827;
+
+    /* Variabili Semantiche (Per gestire Light/Dark Mode) */
+    --bg-gradient-start: #e8ecff;
+    --bg-gradient-end: #f0ebf7;
+    --glass-bg: rgba(255, 255, 255, 0.85); /* Sfondo semi-trasparente */
+    --glass-bg-hover: rgba(255, 255, 255, 0.95);
+    --glass-border: rgba(255, 255, 255, 0.5);
+    --text-main: #1f2937;
+    --text-muted: #4b5563;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 
     --border-radius: 1rem;
     --border-radius-sm: 0.5rem;
     --border-radius-lg: 1.5rem;
+    
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
     --shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.15);
 
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-fast: all 0.15s ease;
+}
+
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    /* Questo risolve il bianco quando "tiri" la pagina troppo in alto/basso su mobile */
+    background-color: var(--bg-gradient-start); 
+    scrollbar-color: var(--primary-color) var(--dark-color); /* Scrollbar scura per Firefox */
+}
+
+/* ===== DARK MODE CONFIGURATION ===== */
+/* Si attiva automaticamente se il sistema è dark, oppure aggiungendo data-theme="dark" al tag html */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-gradient-start: #0f172a;
+        --bg-gradient-end: #1e1b4b;
+        --glass-bg: rgba(31, 41, 55, 0.85); /* Grigio scuro trasparente */
+        --glass-bg-hover: rgba(31, 41, 55, 0.95);
+        --glass-border: rgba(255, 255, 255, 0.1);
+        --text-main: #f3f4f6; /* Testo chiaro */
+        --text-muted: #9ca3af; /* Grigio chiaro */
+        --gray-200: #374151; /* Bordi scuri */
+        --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        --dark-color: #f3f4f6; /* Inversione per titoli hardcoded */
+    }
+}
+
+/* Supporto manuale tramite classe (opzionale) */
+[data-theme="dark"] {
+    --bg-gradient-start: #0f172a;
+    --bg-gradient-end: #1e1b4b;
+    --glass-bg: rgba(31, 41, 55, 0.85);
+    --glass-bg-hover: rgba(31, 41, 55, 0.95);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --text-main: #f3f4f6;
+    --text-muted: #9ca3af;
+    --gray-200: #374151;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --dark-color: #f3f4f6;
 }
 
 /* ===== GENERAL STYLES ===== */
 body {
-    background: linear-gradient(135deg, #e8ecff 0%, #f0ebf7 100%);
+    /* Gradiente fisso: risolve il problema del bianco sotto se la pagina è corta */
+    background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+    background-attachment: fixed; /* FONDAMENTALE: Blocca lo sfondo mentre scrolli */
+    background-size: cover;
+    background-repeat: no-repeat;
+
     min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    
+    /* Risolve le barre bianche a destra/sinistra */
+    overflow-x: hidden; 
+    
     font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-main);
+    transition: background 0.5s ease, color 0.3s ease;
+    
+    /* Assicura che la navbar (se fixed) non abbia gap sopra */
+    position: relative; 
 }
 
 /* ===== HERO SECTION ===== */
@@ -63,7 +121,7 @@ body {
 
 .hero-subtitle {
     font-size: 1.2rem;
-    color: var(--gray-600);
+    color: var(--text-muted); /* Aggiornato a variabile */
     max-width: 600px;
     margin: 0 auto;
 }
@@ -75,12 +133,13 @@ body {
 
 /* ===== FILTER SECTION ===== */
 .filter-section {
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--glass-bg); /* Aggiornato a variabile */
     backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border); /* Aggiunto bordo per contrasto dark mode */
     border-radius: var(--border-radius);
     padding: 1.5rem;
     margin-bottom: 2rem;
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--card-shadow);
     z-index: 100;
 }
 
@@ -94,12 +153,16 @@ body {
 .filter-section .form-select {
     border: 2px solid var(--gray-200);
     transition: var(--transition);
+    background-color: var(--glass-bg-hover); /* Adatta input al tema */
+    color: var(--text-main);
 }
 
 .filter-section .form-control:focus,
 .filter-section .form-select:focus {
     border-color: var(--primary-color);
     box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+    background-color: var(--glass-bg-hover);
+    color: var(--text-main);
 }
 
 /* ===== YEAR SECTIONS ===== */
@@ -114,18 +177,21 @@ body {
     justify-content: space-between;
     margin-bottom: 2rem;
     padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--glass-bg); /* Aggiornato */
     backdrop-filter: blur(20px);
     border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
+    box-shadow: var(--card-shadow);
     border-left: 4px solid var(--primary-color);
+    border-top: 1px solid var(--glass-border);
+    border-right: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
 }
 
 .year-header h2 {
     margin: 0;
     font-size: 1.8rem;
     font-weight: 600;
-    color: var(--dark-color);
+    color: var(--text-main); /* Aggiornato */
     display: flex;
     align-items: center;
 }
@@ -137,11 +203,12 @@ body {
 
 /* ===== FEATURES SECTION ===== */
 .features-section {
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--glass-bg); /* Aggiornato */
     backdrop-filter: blur(20px);
     padding: 4rem 0;
     margin-top: 2rem;
     position: relative;
+    border-top: 1px solid var(--glass-border);
 }
 
 .features-section::before {
@@ -155,7 +222,7 @@ body {
 }
 
 .features-section h2 {
-    color: var(--dark-color);
+    color: var(--text-main); /* Aggiornato */
     font-weight: 700;
     font-size: 2.5rem;
     margin-bottom: 3rem;
@@ -183,8 +250,8 @@ body {
 
 .feature-item:hover {
     transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.7);
-    box-shadow: var(--shadow);
+    background: var(--glass-bg-hover); /* Aggiornato */
+    box-shadow: var(--card-shadow);
 }
 
 .feature-icon {
@@ -205,37 +272,37 @@ body {
     font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: var(--dark-color);
+    color: var(--text-main); /* Aggiornato */
 }
 
 .feature-description {
-    color: var(--gray-600);
+    color: var(--text-muted); /* Aggiornato */
     line-height: 1.6;
     font-size: 1rem;
 }
 
 /* ===== exercise-card ===== */
 .exercise-card {
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--glass-bg); /* Aggiornato */
     backdrop-filter: blur(20px);
     border-radius: var(--border-radius-lg);
-    padding: 1.5rem; /* Ridotto da 2.5rem per adattarsi al tuo contenuto */
+    padding: 1.5rem;
     margin: 1rem;
-    box-shadow: var(--shadow);
+    box-shadow: var(--card-shadow);
     transition: var(--transition);
     position: relative;
     overflow: hidden;
-    height: 250px; /* Altezza fissa come nel tuo esempio */
+    height: 250px;
     display: flex;
     flex-direction: column;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid var(--glass-border); /* Aggiornato */
 }
 
 /* Effetto hover */
 .exercise-card:hover {
     transform: translateY(-10px) scale(1.02);
     box-shadow: var(--shadow-hover);
-    background: rgba(255, 255, 255, 0.98);
+    background: var(--glass-bg-hover); /* Aggiornato */
 }
 
 /* Bordo superiore con gradiente */
@@ -268,23 +335,23 @@ body {
     right: -30%;
 }
 
-/* Stile per il titolo (sostituisce .card-header h3) */
+/* Stile per il titolo */
 .card-header h3 {
     font-size: 1.6rem;
     font-weight: 600;
     margin-bottom: 0.8rem;
-    color: var(--dark-color);
+    color: var(--text-main); /* Aggiornato */
     position: relative;
     text-align: center;
 }
 
 /* Stile per la descrizione */
 .card-description {
-    color: var(--gray-600);
+    color: var(--text-muted); /* Aggiornato */
     margin-bottom: 1.5rem;
     line-height: 1.6;
     font-size: 1rem;
-    flex-grow: 1; /* Fa espandere la descrizione */
+    flex-grow: 1;
     text-align: center;
 }
 
@@ -295,6 +362,7 @@ body {
     gap: 1.5rem;
     margin-bottom: 1.5rem;
     font-size: 0.9rem;
+    color: var(--text-muted); /* Aggiornato */
 }
 
 .exercise-stats span {
@@ -303,7 +371,7 @@ body {
     gap: 0.5rem;
 }
 
-/* Stile per i pulsanti (sostituisce .btn-action) */
+/* Stile per i pulsanti */
 .card-footer {
     display: flex;
     justify-content: center;
@@ -366,36 +434,37 @@ body {
     font-size: 0.8rem;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
+/* Dark mode fix per il badge */
+@media (prefers-color-scheme: dark) {
+    .badge {
+        background: rgba(31, 41, 55, 0.9);
+        color: var(--info-color);
+        border-color: rgba(255,255,255,0.1);
+    }
+}
 
 /* ===== COMING SOON STATE ===== */
-
-/* Classe da aggiungere al div .exercise-card */
 .exercise-card.coming-soon {
-    pointer-events: none; /* Disabilita click su bottoni e card */
-    user-select: none;    /* Impedisce la selezione del testo */
+    pointer-events: none;
+    user-select: none;
     cursor: not-allowed;
 }
 
-/* Sfumiamo e opacizziamo il contenuto interno per dare focus alla scritta */
 .exercise-card.coming-soon .card-header,
 .exercise-card.coming-soon .card-body,
 .exercise-card.coming-soon .card-footer {
     opacity: 0.3;
-    filter: blur(1.5px); /* Leggero sfocamento */
+    filter: blur(1.5px);
 }
 
-/* Creazione del Badge Coming Soon */
-/* Nota: Sovrascrive l'effetto ::after originale (luce radiale) che non serve se la card è disattivata */
 .exercise-card.coming-soon::after {
-    content: 'COMING SOON'; /* Testo del badge */
+    content: 'COMING SOON';
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(-5deg); /* Centrato e leggermente ruotato */
-    
-    /* Stile del Badge */
+    transform: translate(-50%, -50%) rotate(-5deg);
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    color: var(--light-color); /* Testo giallo/arancio per risaltare */
+    color: white; /* Forziamo bianco su gradiente */
     padding: 0.8rem 1.5rem;
     border-radius: 50px;
     font-weight: 800;
@@ -403,21 +472,96 @@ body {
     letter-spacing: 2px;
     text-transform: uppercase;
     white-space: nowrap;
-    
-    /* Ombra e Bordi */
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    
-    z-index: 50; /* Assicura che sia sopra tutto */
-    
-    /* Reset delle proprietà originali di ::after per evitare conflitti */
+    z-index: 50;
     width: auto;
     height: auto;
     right: auto;
 }
 
-/* Rimuoviamo l'effetto hover di ingrandimento se è coming soon */
 .exercise-card.coming-soon:hover {
     transform: none;
-    box-shadow: var(--shadow);
+    box-shadow: var(--card-shadow);
+}
+
+/* ========================================= */
+/* ===== MOBILE RESPONSIVE ADJUSTMENTS ===== */
+/* ========================================= */
+
+@media (max-width: 768px) {
+    /* Hero adjustments */
+    .hero-title {
+        font-size: 2.2rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    /* Filtri impilati */
+    .filter-section .row > div {
+        margin-bottom: 10px;
+    }
+    
+    /* Header Anno impilato */
+    .year-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .year-header .badge {
+        align-self: flex-start;
+    }
+
+    /* Exercise Card Responsiva */
+    .exercise-card {
+        height: auto; /* Rimuove altezza fissa su mobile */
+        min-height: auto;
+        margin: 0.5rem 0;
+    }
+    
+    .card-description {
+        margin-bottom: 1rem;
+    }
+    
+    .exercise-stats {
+        flex-wrap: wrap; /* Permette alle icone di andare a capo */
+        gap: 1rem;
+        font-size: 0.85rem;
+    }
+    
+    /* Pulsanti più compatti su mobile */
+    .btn-action {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .card-footer {
+        flex-wrap: wrap;
+    }
+    
+    /* Features */
+    .feature-item {
+        padding: 1.5rem 0.5rem;
+    }
+    
+    /* Badge coming soon più piccolo */
+    .exercise-card.coming-soon::after {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+}
+/* Per Chrome/Edge/Safari: Scrollbar personalizzata (opzionale ma consigliata per dark mode) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--dark-color); 
+}
+::-webkit-scrollbar-thumb {
+    background: var(--gray-600); 
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color); 
 }
