@@ -49,7 +49,8 @@
             { name: "Interazione Uomo Macchina e Tecnologie Web", cfu: 9, desc: "Usabilità, design di interfacce, sviluppo web", ex: 160, time: "~3h", diff: "Media" },
             { name: "Reti (6 CFU)", cfu: 6, desc: "Fondamenti di reti: modello OSI, TCP/IP, routing", ex: 100, time: "~2h", diff: "Media" },
             { name: "Reti (12 CFU)", cfu: 12, desc: "Reti avanzate: protocolli applicativi, sicurezza, QoS", ex: 180, time: "~3.5h", diff: "Alta" },
-            { name: "Interazione Uomo Macchina (9 CFU IUM)", cfu: 9, desc: "Progettazione interfacce, accessibilità, valutazione", ex: 120, time: "~2.5h", diff: "Media" }
+            { name: "Interazione Uomo Macchina (9 CFU IUM)", cfu: 9, desc: "Progettazione interfacce, accessibilità, valutazione", ex: 120, time: "~2.5h", diff: "Media" },
+            { name: "Sistemi Operativi Vec", cfu: 9, desc: "Processi, thread, scheduling, memoria virtuale", ex: 140, time: "~2.5h", diff: "Alta" }
         ]
     };
 
@@ -58,7 +59,7 @@
         "Analisi", 
         "Programmazione I",
         "Sistemi Intelligenti",
-
+        "Sistemi Operativi Vec",
         // Aggiungi qui le materie pronte...
     ];
 

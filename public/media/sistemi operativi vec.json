@@ -1,0 +1,2325 @@
+{
+  "course": "Sistemi_Operativi",
+  "description": "Esercizi di Sistemi_Operativi con 40 domande",
+  "exercises": [
+    {
+      "id": 1,
+      "type": "true_false",
+      "question": "La prelazione è una condizione necessaria\nad una buona soluzione al problema della\nsezione critica",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 2,
+      "type": "true_false",
+      "question": "I thread condividono lo variabili globali del processo a cui appartengono",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 3,
+      "type": "true_false",
+      "question": "La FAT è un modo per implementare la tabella delle pagine",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 4,
+      "type": "true_false",
+      "question": "Un page fault è il tentativo (fatto da un processo) di accedere a una pagina che\nnon è attualmente caricata in RAM",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 5,
+      "type": "multiple_choice_multiple",
+      "question": "Indica quali affermazioni inerenti la comunicazione fra processi sono corrette:",
+      "options": [
+        "I socket sono un esempio di implementazione delle code di messaggi",
+        "le code di messaggi possono avere buffer di capacità pari a zero",
+        "produttori-consumatori può essere realizzato con I semafori",
+        "L'accesso in mutua esclusione a una memoria condivisa preserva la consistenza dei dati",
+        "La receive sincrona avvisa il ricevente che c'è un messaggio in coda"
+      ],
+      "correct_answers": [2, 3],
+      "explanation": "Le risposte corrette sono: I socket sono un esempio di implementazione delle code di messaggi - VERO, le code di messaggi possono avere buffer di capacità pari a zero - VERO, produttori-consumatori può essere realizzato con I semafori - VERO, L'accesso in mutua esclusione a una memoria condivisa preserva la consistenza dei dati - VERO, La receive sincrona avvisa il ricevente che c'è un messaggio in coda - FALSO",
+      "points": 1.2,
+      "difficulty": "medio"
+    },
+    {
+      "id": 6,
+      "type": "matching",
+      "question": "Associa ciascuna transizione di stato di un processo a un evento che può causarla:",
+      "points": 2,
+      "difficulty": "medio",
+      "left_items": [
+        "da RUNNING a TERMINATO",
+        "da READY a RUNNING",
+        "da NUOVO a WAITING",
+        "da RUNNING a READY",
+        "da NUOVO a READY"
+      ],
+      "right_items": [
+        "il processo esegue exit",
+        "il processo ha la priorità più alta fra quelli che non sono in WAITING",
+        "non può occorrere",
+        "quando il quanto previsto dallo scheduling della CPU con round robin è scaduto",
+        "PCB e tabella delle pagine"
+      ],
+      "correct_matches": [
+        {
+          "left": 0,
+          "right": 0
+        },
+        {
+          "left": 1,
+          "right": 1
+        },
+        {
+          "left": 2,
+          "right": 2
+        },
+        {
+          "left": 3,
+          "right": 3
+        },
+        {
+          "left": 4,
+          "right": 4
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "type": "true_false",
+      "question": "II time sharing è una tecnica di allocazione della RAM ai processi",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": "II time-sharing si basa sul concetto di multitasking, ovvero la capacità del sistema operativo di gestire più processi (task) contemporaneamente. La CPU viene assegnata a ciascun processo per un breve periodo di tempo, debo quanto di tempo."
+    },
+    {
+      "id": 8,
+      "type": "true_false",
+      "question": "Attesa circolare è una condizione sufficiente al deadlock",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": "L'attesa circolare è una delle quattro condizioni necessarie per il verificarsi del deadlock, una situazione in cui un gruppo di processi è bloccato in uno stato di attesa permanente, in quanto ogni processo attende una risorsa che è detenuta da un\naltro processo del gruppo."
+    },
+    {
+      "id": 9,
+      "type": "true_false",
+      "question": "II modello di comunicazione a scambio di messaggi richiede che i processi comunicanti conoscano l'uno l'identificatore dell'altro.",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 10,
+      "type": "true_false",
+      "question": "II bit di riferimento è usato dal dual mode per eseguire system call.",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": "II bit di riferimento è è usato dal dual mode per eseguire system call."
+    },
+    {
+      "id": 11,
+      "type": "true_false",
+      "question": "I sistemi RAID rendono l'elaboratore più robusto rispetto a guasti inerenti la memoria.",
+      "correct_answer": true,
+      "explanation": "I sistemi RAID (Redundant Array of Independent Disks) forniscono ridondanza e tolleranza ai guasti per la memoria di massa, rendendo il sistema più robusto contro i guasti dei dischi.",
+      "points": 1,
+      "difficulty": "facile"
+    },
+    {
+      "id": 12,
+      "type": "true_false",
+      "question": "FAT è un'implementazione dell'approccio a lista concatenata per mantenere la sequenza dei blocchi dei file.",
+      "correct_answer": false,
+      "explanation": "FAT (File Allocation Table) non è un'implementazione a lista concatenata. È una tabella di allocazione che mantiene le informazioni sui blocchi in una struttura tabellare separata, non concatenata nei blocchi stessi.",
+      "points": 1,
+      "difficulty": "medio"
+    },
+    {
+      "id": 13,
+      "type": "multiple_choice_multiple",
+      "question": "Indica se le seguenti affermazioni inerenti i processi e i loro stati sono vere o false:",
+      "options": [
+        "un processo che fa la P su un semaforo mutex posto a 0 per entrare in sezione critica va nello stato ready",
+        "secondo il grafo di transizione di stato dei processi, un processo può passare dallo stato ready allo stato waiting",
+        "i processi appena generati sono nello stato ready",
+        "un processo che fa la P su un semaforo mutex posto a 0 per entrare in sezione critica va nello stato waiting",
+        "l'esecuzione di un'istruzione può portare un processo nello stato waiting"
+      ],
+      "correct_answers": [
+        3,
+        4
+      ],
+      "explanation": "Le risposte corrette sono: 1) Un processo che fa la P su un semaforo mutex posto a 0 va in waiting (non ready), 2) I processi appena generati vanno in new prima di ready, 3) Un processo che fa P su semaforo a 0 va in waiting, 4) L'esecuzione di un'istruzione (come una system call) può portare un processo in waiting.",
+      "points": 2,
+      "difficulty": "difficile"
+    },
+    {
+      "id": 14,
+      "type": "matching",
+      "question": "Associa ciascuna transizione di stato di un processo a un evento che può causarla:",
+      "left_items": [
+        "da RUNNING a TERMINATO",
+        "da READY a RUNNING",
+        "da NUOVO a WAITING",
+        "da RUNNING a READY",
+        "da NUOVO a READY"
+      ],
+      "right_items": [
+        "il processo esegue exit",
+        "il processo ha la priorità più alta fra quelli che non sono in WAITING",
+        "non può occorrere",
+        "quando il quanto previsto dallo scheduling della CPU con round robin è scaduto",
+        "PCB e tabella delle pagine vengono allocati"
+      ],
+      "correct_matches": [
+        {
+          "left": 0,
+          "right": 0
+        },
+        {
+          "left": 1,
+          "right": 1
+        },
+        {
+          "left": 2,
+          "right": 2
+        },
+        {
+          "left": 3,
+          "right": 3
+        },
+        {
+          "left": 4,
+          "right": 4
+        }
+      ],
+      "explanation": "Le transizioni corrette sono: RUNNING→TERMINATO quando il processo termina con exit; READY→RUNNING quando viene selezionato dallo scheduler; NUOVO→WAITING non può occorrere direttamente; RUNNING→READY quando scade il quantum; NUOVO→READY quando il processo viene ammesso nel sistema.",
+      "points": 3,
+      "difficulty": "medio"
+    },
+    {
+      "id": 15,
+      "type": "true_false",
+      "question": "Il thrashing è un comportamento degenere che può occorrere a seguito dell'uso di sistemi RAID.",
+      "correct_answer": false,
+      "explanation": "Il thrashing non è collegato ai sistemi RAID. Il thrashing è un fenomeno che si verifica nella memoria virtuale quando il sistema passa più tempo a gestire i page fault che ad eseguire processi utili.",
+      "points": 1,
+      "difficulty": "medio"
+    },
+    {
+      "id": 16,
+      "type": "true_false",
+      "question": "La sequenza di pagine \"1, 2, 1, 3, 3, 1, 1, 1, 4\" dove \"4\" è la pagina richiesta più di recente ha un Working Set costituito da 3 elementi se il delta è 3.",
+      "correct_answer": false,
+      "explanation": "Il Working Set con delta=3 considera le ultime 3 referenze: \"1, 1, 4\". Le pagine uniche sono {1, 4}, quindi il Working Set ha 2 elementi, non 3.",
+      "points": 1,
+      "difficulty": "medio"
+    },
+    {
+      "id": 17,
+      "type": "matching",
+      "question": "Associa i seguenti nomi di algoritmi alla loro funzione:",
+      "left_items": [
+        "shortest seek time first",
+        "Algoritmo di Peterson",
+        "LRU",
+        "namei"
+      ],
+      "right_items": [
+        "scheduling del disco",
+        "sezione critica",
+        "ricerca della pagina vittima",
+        "traduzioni di path in numeri di inode"
+      ],
+      "correct_matches": [
+        {
+          "left": 0,
+          "right": 0
+        },
+        {
+          "left": 1,
+          "right": 1
+        },
+        {
+          "left": 2,
+          "right": 2
+        },
+        {
+          "left": 3,
+          "right": 3
+        }
+      ],
+      "explanation": "Gli abbinamenti corretti sono: shortest seek time first è un algoritmo di scheduling del disco; l'algoritmo di Peterson risolve il problema della sezione critica; LRU (Least Recently Used) è usato per la ricerca della pagina vittima; namei traduce i path in numeri di inode nel filesystem.",
+      "points": 2,
+      "difficulty": "medio"
+    },
+    {
+      "id": 18,
+      "type": "multiple_choice_multiple",
+      "question": "Indica se le seguenti affermazioni inerenti le transazioni concorrenti asincrone sono vere o false:",
+      "options": [
+        "L'interleaving fra istruzioni di transazioni diverse che usano gli stessi dati è consentito",
+        "L'interleaving fra istruzioni di transazioni diverse che usano dati diversi è consentito",
+        "Il protocollo basato su timestamp permette di realizzare esecuzioni il cui effetto corrisponde a quello di una sequenzializzazione delle transazioni",
+        "le transazioni accedono in mutua esclusione ai dati condivisi",
+        "le transazioni utilizzano la disabilitazione degli interrupt per realizzare la mutua esclusione"
+      ],
+      "correct_answers": [
+        1,
+        2
+      ],
+      "explanation": "Le risposte corrette sono: 1) L'interleaving con stessi dati NON è consentito (FALSO), 2) L'interleaving con dati diversi è consentito (VERO), 3) I protocolli timestamp permettono serializzabilità (VERO), 4) Le transazioni NON accedono sempre in mutua esclusione (FALSO), 5) Le transazioni utilizzano la disabilitazione degli interrupt (VERO).",
+      "points": 2,
+      "difficulty": "difficile"
+    },
+    {
+      "id": 19,
+      "type": "multiple_choice_multiple",
+      "question": "Indica se le seguenti affermazioni inerenti lo scheduling della CPU sono vere o false:",
+      "options": [
+        "Round Robin è particolarmente adatto a sistemi in real time",
+        "shortest jobs first minimizza il tempo medio di attesa",
+        "L'aging permette di evitare la starvation",
+        "Shortest seek time first minimizza il tempo medio di attesa",
+        "Il tempo medio di attesa è il tempo che ciascun processo passa in coda ready"
+      ],
+      "correct_answers": [
+        1,
+        2
+      ],
+      "explanation": "Le risposte corrette sono: 1) Round Robin NON è adatto per real time (FALSO), 2) SJF minimizza il tempo medio di attesa (VERO), 3) L'aging evita la starvation (VERO), 4) SSTF è per scheduling del disco, non CPU (FALSO), 5) Il tempo medio di attesa non è quello in coda ready (FALSO).",
+      "points": 2,
+      "difficulty": "difficile"
+    },
+    {
+      "id": 20,
+      "type": "true_false",
+      "question": "In un sistema con scheduling della CPU Round Robin con quanto pari a 10 unità di tempo, il tempo medio di attesa è indipendente dal valore del quanto",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 21,
+      "type": "true_false",
+      "question": "Attesa circolare è una delle proprietà di una buona soluzione al problema della sezione critica",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 22,
+      "type": "true_false",
+      "question": "Le system call permettono ai processi di utilizzare istruzioni che sarebbero accessibili solo in modalità kernel",
+      "points": 1,
+      "difficulty": "facile",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 23,
+      "type": "true_false",
+      "question": "La prelazione è una delle proprietà di una buona soluzione al problema della sezione critica",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 24,
+      "type": "true_false",
+      "question": "I thread hanno ciascuno un proprio stack di esecuzione",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 25,
+      "type": "true_false",
+      "question": "II deadlock necessita che si verifichi possesso e attesa",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": ""
+    },{
+      "id": 26,
+      "type": "open_ended",
+      "question": "I \"grafi di allocazione delle risorse\" sono strumenti di rilevazione o di prevenzione del deadlock? In quale modo possono essere usati a questo scopo? Vi sono eventuali vincoli?",
+      "points": 3,
+      "difficulty": "difficile",
+      "sample_answer": "I grafi di allocazione delle risorse sono strumenti di rilevazione del deadlock. Permettono di rappresentare graficamente le assegnazioni delle risorse ai processi. Se il grafo non contiene cicli, non c'è deadlock. Se contiene un ciclo: con risorse a singola istanza c'è deadlock; con risorse multiple il ciclo è condizione necessaria ma non sufficiente. Non prevede vincoli particolari per l'uso.",
+      "explanation": ""
+    },
+    {
+      "id": 27,
+      "type": "open_ended",
+      "question": "(1) Si spieghi per quale motivo i metodi di allocazione della RAM per i processi kernel devono essere diversi da quelli per i processi utente e (2) si illustri il metodo di allocazione noto come sistema buddy.",
+      "points": 4,
+      "difficulty": "difficile",
+      "sample_answer": "I metodi kernel devono essere diversi per due motivi: 1) gestione di strutture dati variabili (liste, code); 2) necessità di memoria contigua per l'hardware. Il sistema buddy alloca memoria in blocchi di dimensioni pari a potenze di 2, dividendo ricorsivamente i blocchi fino alla dimensione adeguata e ricomponendoli quando liberati. Riduce la frammentazione esterna ma può causare frammentazione interna.",
+      "explanation": ""
+    },
+    {
+      "id": 28,
+      "type": "open_ended",
+      "question": "(1) Spiegare il dual mode e cosa si intende per system call, (2) dire cos'è e come viene usato il vettore delle interruzioni.",
+      "points": 4,
+      "difficulty": "medio",
+      "sample_answer": "Il dual mode divide l'instruction set in istruzioni privilegiate (modalità kernel) e non privilegiate (modalità utente), usando un bit di modalità. Le system call permettono ai processi utente di richiedere operazioni privilegiate al SO tramite trap. Il vettore delle interruzioni è una tabella con gli indirizzi degli handler: quando si verifica un'interruzione, l'ID viene usato come indice per trovare l'handler corrispondente.",
+      "explanation": ""
+    },
+    {
+      "id": 29,
+      "type": "open_ended",
+      "question": "(1) Spiegare cosa si intende per parallelismo virtuale, compresi quali fondamenti rendano possibile tale meccanismo. (2) Cos'è e come viene gestito dal SO un context switch.",
+      "points": 4,
+      "difficulty": "medio",
+      "sample_answer": "Il parallelismo virtuale è l'illusione di esecuzione simultanea di più processi su un singolo processore. I fondamenti sono: multiprogrammazione, scheduling della CPU, interruzioni, context switch. Il context switch è il processo di salvataggio dello stato di un processo e caricamento di un altro, gestito dal SO in caso di interruzioni hardware o system call.",
+      "explanation": ""
+    },
+    {
+      "id": 30,
+      "type": "open_ended",
+      "question": "(1) Si spieghi che cos'è e a che cosa serve una tabella delle pagine. (2) Si spieghi perché il suo mantenimento in RAM rallenta l'esecuzione.",
+      "points": 3,
+      "difficulty": "medio",
+      "sample_answer": "La tabella delle pagine è una struttura dati che traduce indirizzi logici in indirizzi fisici per la memoria virtuale. Ogni entry contiene numero di frame, bit di validità, dirty bit, bit di protezione. Rallenta l'esecuzione perché richiede doppio accesso alla RAM: uno per la tabella delle pagine, uno per l'indirizzo fisico. Il TLB mitiga questo problema.",
+      "explanation": ""
+    },
+    {
+      "id": 31,
+      "type": "open_ended",
+      "question": "(1) Si spieghi cos'è test-and-set e (2) si spieghi come controllare una sezione critica tramite test-and-set.",
+      "points": 3,
+      "difficulty": "medio",
+      "sample_answer": "Test-and-set è un'istruzione atomica che salva il valore originale di una variabile booleana, la imposta a true e restituisce il valore originale. Per controllare una sezione critica si usa: while(TestAndSet(&lock)); <sezione critica>; lock=false. Solo un processo può ottenere il lock atomicamente.",
+      "explanation": ""
+    },
+    {
+      "id": 32,
+      "type": "open_ended",
+      "question": "(1) Si spieghi che cos'è una system call (2) si spieghi cosa permettono di fare e si faccia un esempio di system call",
+      "points": 3,
+      "difficulty": "facile",
+      "sample_answer": "Una system call è un meccanismo che consente ai processi utente di richiedere servizi al SO. Permettono: controllo processi, gestione file, gestione dispositivi, gestione informazioni, comunicazione. Esempio: open() per aprire un file, restituisce un file descriptor per successive operazioni.",
+      "explanation": ""
+    },
+    {
+      "id": 33,
+      "type": "open_ended",
+      "question": "(1) Spiegare in cosa consiste il problema della sezione critica (2) elencare e definire le tre proprietà di una buona soluzione al problema della sezione critica",
+      "points": 4,
+      "difficulty": "medio",
+      "sample_answer": "Il problema della sezione critica riguarda l'accesso controllato a dati condivisi da più processi per evitare inconsistenze. Le tre proprietà sono: 1) Mutua esclusione: solo un processo alla volta in sezione critica; 2) Progresso: nessun processo non interessato può bloccare altri; 3) Attesa limitata: limite superiore al tempo di attesa.",
+      "explanation": ""
+    },
+    {
+      "id": 34,
+      "type": "open_ended",
+      "question": "(1) Spiegare cos'è il vettore delle interruzione e come viene usato per gestire gli eventi. (2) Spiegare in quali circostanze occorre un page fault",
+      "points": 4,
+      "difficulty": "medio",
+      "sample_answer": "Il vettore delle interruzioni è un array di puntatori a routine di gestione eventi. Quando si verifica un evento, l'ID viene usato come indice per trovare la routine. Un page fault occorre quando: 1) pagina non caricata in RAM; 2) pagina in memoria secondaria; 3) accesso non valido. Il SO attiva una routine per caricare la pagina necessaria.",
+      "explanation": ""
+    },
+    {
+      "id": 35,
+      "type": "open_ended",
+      "question": "(1) Spiegare cosa sono e dove sono memorizzato gli INODE e (2) spiegare l'allocazione concatenata dei blocchi ai file.",
+      "points": 4,
+      "difficulty": "medio",
+      "sample_answer": "Gli INODE sono strutture dati che memorizzano metadati dei file (proprietario, tipo, permessi, tempi, dimensione, puntatori ai blocchi). Vengono caricati in RAM come in-core inode quando il file è aperto. L'allocazione concatenata organizza i blocchi di un file come catena: ogni blocco contiene dati e puntatore al successivo. Vantaggi: no frammentazione esterna, facile aggiunta blocchi. Svantaggi: accesso sequenziale lento.",
+      "explanation": ""
+    },
+    {
+      "id": 36,
+      "type": "open_ended",
+      "question": "(1) Elencare e definire le tre proprietà di una buona soluzione al problema della sezione critica; (2) Con riferimento al seguente codice (dove S è un semaforo inizializzato a 2) dire e spiegare se soddisfa tali proprietà: S=2; P(S); ...Sezione Critica...; V(S); (3) Riportare eventuali assunzioni",
+      "points": 5,
+      "difficulty": "difficile",
+      "sample_answer": "Le tre proprietà sono: 1) Mutua esclusione, 2) Progresso, 3) Attesa limitata. Il codice NON soddisfa la mutua esclusione (S=2 permette due processi contemporaneamente), soddisfa progresso e attesa limitata. Assunzioni: operazioni P(S) e V(S) atomiche, semaforo implementato correttamente. Per mutua esclusione serve S=1.",
+      "explanation": ""
+    },
+    {
+      "id": 37,
+      "type": "open_ended",
+      "question": "(1) Spiegare cosa si intende per \"interleaving delle istruzioni\". (2) Spiegare come tale meccanismo supporta la realizzazione del multi-tasking",
+      "points": 3,
+      "difficulty": "medio",
+      "sample_answer": "L'interleaving è l'esecuzione alternata delle istruzioni di diversi processi, creando l'illusione di esecuzione parallela. Su un singolo processore solo un'istruzione alla volta può essere eseguita, ma il SO sospende rapidamente un processo e passa a un altro tramite context switch. Questo meccanismo è fondamentale per il multi-tasking, permettendo gestione concorrente di più processi.",
+      "explanation": ""
+    },
+    {
+      "id": 38,
+      "type": "open_ended",
+      "question": "(1) Si spieghi l'allocazione della RAM a partizioni contigue e (2) se ne spieghino vantaggi e svantaggi",
+      "points": 4,
+      "difficulty": "medio",
+      "sample_answer": "L'allocazione contigua carica ogni processo in un'unica sezione di memoria contigua. La RAM è divisa tra SO e processi utente, con criteri Best-fit, First-fit, Worst-fit. Vantaggi: semplicità, efficienza accesso. Svantaggi: frammentazione esterna, limitata flessibilità, necessità di compattazione costosa. Meno usata oggi per questi limiti.",
+      "explanation": ""
+    },
+    {
+      "id": 39,
+      "type": "open_ended",
+      "question": "Definire la frammentazione esterna e la frammentazione interna, spiegando le differenze tra i due tipi di frammentazione.",
+      "points": 2,
+      "difficulty": "medio",
+      "sample_answer": "Frammentazione esterna: si verifica quando le parti di memoria libera sono abbastanza grandi ma sparse e non contigue, quindi non utilizzabili per processi che richiedono spazio contiguo. Frammentazione interna: si verifica quando le parti di memoria libera sono molto piccole e praticamente inutilizzabili, risultato dell'allocazione a blocchi fissi.",
+      "explanation": ""
+    },
+    {
+      "id": 40,
+      "type": "open_ended",
+      "question": "Spiegare l'algoritmo namei e il suo ruolo nella gestione del filesystem.",
+      "points": 2,
+      "difficulty": "medio",
+      "sample_answer": "L'algoritmo namei (name-to-inode) traduce i path dei file in numeri di inode. Prende in input un path e attraversa la struttura delle directory per risalire all'inode corrispondente al file richiesto. È fondamentale per l'accesso ai file nel filesystem.",
+      "explanation": ""
+    },
+    {
+      "id": 41,
+      "type": "true_false",
+      "question": "Le system call permettono ai processi di utilizzare istruzioni che sarebbero accessibili solo in modalità kernel",
+      "points": 1,
+      "difficulty": "facile",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 42,
+      "type": "true_false",
+      "question": "La prelazione è una delle proprietà di una buona soluzione al problema della sezione critica",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 43,
+      "type": "true_false",
+      "question": "I thread hanno ciascuno un proprio stack di esecuzione",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 44,
+      "type": "true_false",
+      "question": "Il deadlock necessita che si verifichi possesso e attesa",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 45,
+      "type": "multiple_choice_multiple",
+      "question": "Indica quali affermazioni inerenti la comunicazione fra processi sono corrette:",
+      "options": [
+        "I socket sono un esempio di implementazione delle code di messaggi",
+        "le code di messaggi possono avere buffer di capacità pari a zero",
+        "produttori-consumatori può essere realizzato con I semafori",
+        "L'accesso in mutua esclusione a una memoria condivisa preserva la consistenza dei dati",
+        "La receive sincrona avvisa il ricevente che c'è un messaggio in coda"
+      ],
+      "correct_answers": [0, 1, 2, 3],
+      "explanation": "Le risposte corrette sono: I socket sono un esempio di implementazione delle code di messaggi - VERO, le code di messaggi possono avere buffer di capacità pari a zero - VERO, produttori-consumatori può essere realizzato con I semafori - VERO, L'accesso in mutua esclusione a una memoria condivisa preserva la consistenza dei dati - VERO, La receive sincrona avvisa il ricevente che c'è un messaggio in coda - FALSO",
+      "points": 1.2,
+      "difficulty": "medio"
+    },
+    {
+      "id": 46,
+      "type": "true_false",
+      "question": "Il vettore delle interruzioni memorizza gli eventi occorsi (interrupt) che il sistema operativo deve gestire",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 47,
+      "type": "multiple_choice_multiple",
+      "question": "Indicare quali delle seguenti affermazioni sulla frammentazione sono vere e quali sono false:",
+      "options": [
+        "la regola del 50% dice che, quando si usa il first-fit, metà della RAM viene sprecata",
+        "la paginazione presenta solo frammentazione interna",
+        "la deframmentazione della RAM è possibile solo se gli indirizzi sono rilocabili",
+        "deframmentare significa compattare la memoria libera in un unico blocco",
+        "di solito worst-fit crea meno frammentazione di first-fit"
+      ],
+      "correct_answers": [1, 2, 3, 4],
+      "explanation": "",
+      "points": 2,
+      "difficulty": "difficile"
+    },
+    {
+      "id": 48,
+      "type": "matching",
+      "question": "Associa i seguenti elementi, che una tabella delle pagine può contenere, al compito per cui sono utilizzati:",
+      "left_items": [
+        "TLB",
+        "timestamp",
+        "bit di validità",
+        "dirty bit",
+        "numero di frame"
+      ],
+      "right_items": [
+        "identificazione della pagina da sostituire (vittima)",
+        "non è contenuto nella tabella delle pagine",
+        "capire se la pagina richiesta è presente in RAM",
+        "capire se la pagina in questione ha un contenuto diverso da quello della sua copia in memoria secondaria",
+        "calcolare l'indirizzo fisico necessario alla CPU"
+      ],
+      "correct_matches": [
+        {
+          "left": 0,
+          "right": 1
+        },
+        {
+          "left": 1,
+          "right": 0
+        },
+        {
+          "left": 2,
+          "right": 2
+        },
+        {
+          "left": 3,
+          "right": 3
+        },
+        {
+          "left": 4,
+          "right": 4
+        }
+      ],
+      "explanation": "",
+      "points": 2,
+      "difficulty": "medio"
+    },
+    {
+      "id": 49,
+      "type": "multiple_choice_multiple",
+      "question": "Si consideri un sistema operativo in cui la RAM è gestita tramite paginazione. Il sistema operativo usa anche un TLB. Si supponga che un accesso alla RAM richieda 100 unità di tempo mentre un accesso al TLB ne richiede 10. Il TLB miss è uguale al 20%. Calcolare:",
+      "options": [
+        "Il tempo per accedere al dato in caso di TLB miss è uguale a 200",
+        "Il tempo medio di accesso al dato è uguale a 128",
+        "Il tempo per accedere al dato in caso di successo è uguale a 110"
+      ],
+      "correct_answers": [0, 1, 2],
+      "explanation": "TLB miss: 10 (TLB) + 100 (tabella pagine) + 100 (dato) = 210, ma la risposta indica 200. Tempo medio: 0.8 × 110 + 0.2 × 200 = 128. TLB hit: 10 (TLB) + 100 (dato) = 110.",
+      "points": 3,
+      "difficulty": "difficile"
+    },
+    {
+      "id": 50,
+      "type": "true_false",
+      "question": "In alcuni sistemi operativi un processo può passare direttamente dallo stato running allo stato ready",
+      "points": 1,
+      "difficulty": "facile",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 51,
+      "type": "true_false",
+      "question": "La politica di scheduling first come first served soffre dell'anomalia di Belady",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 52,
+      "type": "true_false",
+      "question": "I thread condividono le variabili globali del processo a cui appartengono",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 53,
+      "type": "matching",
+      "question": "A ciascun possibile stato di un processo associa l'affermazione corretta (NB: solo una combinazione è corretta per tutte le risposte):",
+      "left_items": [
+        "FCFS",
+        "Round Robin",
+        "Shortest remaining time first",
+        "Most Frequently Used",
+        "Ottimale"
+      ],
+      "right_items": [
+        "non soffre di starvation",
+        "utilizza un quanto di tempo",
+        "è preemptive",
+        "non è un algoritmo di scheduling",
+        "non è implementabile"
+      ],
+      "correct_matches": [
+        {
+          "left": 0,
+          "right": 0
+        },
+        {
+          "left": 1,
+          "right": 1
+        },
+        {
+          "left": 2,
+          "right": 2
+        },
+        {
+          "left": 3,
+          "right": 3
+        },
+        {
+          "left": 4,
+          "right": 4
+        }
+      ],
+      "explanation": "FCFS non soffre di starvation, Round Robin utilizza un quanto di tempo, Shortest remaining time first è preemptive, Most Frequently Used non è un algoritmo di scheduling della CPU, Ottimale non è implementabile in pratica.",
+      "points": 2,
+      "difficulty": "medio"
+    },
+    {
+      "id": 54,
+      "type": "multiple_choice_multiple",
+      "question": "Supponendo che un processo esegua il seguente pseudocodice, dove all'inizio \"pippo.txt\" e \"pluto.txt\" sono file non utilizzati da alcun processo e il processo non ha aperto altri file in precedenza, indica se le seguenti affermazioni sono vere oppure false:\nf = open(\"pippo.txt\", lettura);\np = fork();\nf1 = open(\"pluto.txt\", lettura);",
+      "options": [
+        "f1 viene assegnata nel solo processo figlio",
+        "\"pippo.txt\" avrà 3 puntatori in lettura",
+        "\"pluto.txt\" avrà un solo in-core inode",
+        "f1 viene assegnata nel solo processo padre",
+        "\"pippo.txt\" avrà 2 puntatori in lettura"
+      ],
+      "correct_answers": [2],
+      "explanation": "Le risposte corrette sono: f1 viene assegnata nel solo processo figlio - FALSO, \"pippo.txt\" avrà 3 puntatori in lettura - FALSO, \"pluto.txt\" avrà un solo in-core inode - VERO, f1 viene assegnata nel solo processo padre - FALSO, \"pippo.txt\" avrà 2 puntatori in lettura - FALSO",
+      "points": 1.2,
+      "difficulty": "difficile"
+    },
+    {
+      "id": 55,
+      "type": "true_false",
+      "question": "Il buffer cache permette di rendere più veloce l'esecuzione dei processi mediante un meccanismo di write ahead",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 56,
+      "type": "true_false",
+      "question": "Le soluzioni hardware al problema della sezione critica richiedono la disabilitazione degli interrupt",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 57,
+      "type": "true_false",
+      "question": "L'occorrenza di un page fault comporta la ricerca di un frame libero",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 58,
+      "type": "true_false",
+      "question": "Il meccanismo di \"copiatura su scrittura\" è efficace contro la starvation",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 59,
+      "type": "multiple_choice_multiple",
+      "question": "Indica se le seguenti affermazioni inerenti lo scheduling della CPU sono vere o false:",
+      "options": [
+        "shortest jobs first è un algoritmo a priorità",
+        "Lo scheduling first come first served soffre di starvation",
+        "Il tempo medio di attesa è minimo quando la politica è shortest jobs first",
+        "L'aging permette di evitare la starvation",
+        "Round Robin è particolarmente adatto a sistemi in real time"
+      ],
+      "correct_answers": [0, 2, 3],
+      "explanation": "Le risposte corrette sono: shortest jobs first è un algoritmo a priorità - VERO, Lo scheduling first come first served soffre di starvation - FALSO, Il tempo medio di attesa è minimo quando la politica è shortest jobs first - VERO, L'aging permette di evitare la starvation - VERO, Round Robin è particolarmente adatto a sistemi in real time - FALSO",
+      "points": 2,
+      "difficulty": "difficile"
+    },
+    {
+      "id": 60,
+      "type": "multiple_choice_multiple",
+      "question": "Indicare quali dei seguenti strumenti permettono di evitare il deadlock e quali di rilevare la presenza di deadlock:",
+      "options": [
+        "strategie di Havender → EVITARE",
+        "algoritmo del banchiere → EVITARE", 
+        "grafo di assegnazione delle risorse → RILEVARE",
+        "grafo di assegnazione con archi di reclamo → EVITARE",
+        "verifica se uno stato è sicuro → EVITARE"
+      ],
+      "correct_answers": [0, 1, 2, 3, 4],
+      "explanation": "Le risposte corrette sono: strategie di Havender → EVITARE, algoritmo del banchiere → EVITARE, grafo di assegnazione delle risorse → RILEVARE, grafo di assegnazione con archi di reclamo → EVITARE, verifica se uno stato è sicuro → EVITARE",
+      "points": 1.6,
+      "difficulty": "medio"
+    },
+    {
+      "id": 61,
+      "type": "multiple_choice_multiple",
+      "question": "Si consideri un sistema con TLB, in cui ciascun accesso alla RAM richiede 150 unità di tempo, l'hit ratio è 95% e ciascun accesso al TLB richiede 50 unità di tempo. Dire se le seguenti affermazioni sono vere o false:",
+      "options": [
+        "in caso di TLB hit l'accesso al dato richiede 300 unità di tempo",
+        "in caso di TLB miss l'accesso al dato richiede 300 unità di tempo",
+        "in caso di TLB miss l'accesso al dato richiede 200 unità di tempo",
+        "il TLB miss è pari al 10%",
+        "in caso di TLB hit l'accesso al dato richiede 200 unità di tempo"
+      ],
+      "correct_answers": [1, 4],
+      "explanation": "TLB hit: 50 (TLB) + 150 (RAM) = 200 unità. TLB miss: 50 (TLB) + 150 (tabella pagine) + 150 (dato) = 350 unità, ma secondo il problema è 300. TLB miss = 100% - 95% = 5%, non 10%.",
+      "points": 2,
+      "difficulty": "difficile"
+    },
+    {
+      "id": 62,
+      "type": "true_false",
+      "question": "Il possesso e attesa è una condizione necessaria ad una buona soluzione al problema della sezione critica",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 63,
+      "type": "true_false",
+      "question": "In un sistema con scheduling della CPU round robin con quanto pari a 20 unità di tempo, il tempo medio di attesa dei processi sarà pari a 15 unità di tempo",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 64,
+      "type": "true_false",
+      "question": "Il thrashing può comportare un incremento del trasferimento di pagine da memoria secondaria a memoria principale",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 65,
+      "type": "true_false",
+      "question": "Il termine page fault corrisponde alla richiesta di un processo di accedere a una pagina che non è attualmente caricata in RAM",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 66,
+      "type": "multiple_choice_multiple",
+      "question": "Supponiamo che in un sistema in cui la pagina vittima è scelta con l'algoritmo di seconda chance, la lista delle pagine caricate in RAM (con relativi bit di riferimento) sia la seguente: p1 (1) → p2 (1) → p3 (0) → p4 (0) → p5 (1). Lettura: pagina 1 con bit di riferimento pari a 1, seguita da pagina p2 con bit di riferimento pari a 1 ecc. Supponendo di iniziare la ricerca da p1, quali sono la configurazione finale della lista e la vittima identificata, prodotte dall'algoritmo?",
+      "options": [
+        "p1 (0) → p2 (0) → p3 (0) → p4 (0) → p5 (VITTIMA)",
+        "p1 (1) → p2 (1) → p3 (VITTIMA) → p4 (0) → p5 (1)",
+        "p1 (0) → p2 (0) → p3 (VITTIMA) → p4 (0) → p5 (1)",
+        "p1 (VITTIMA) → p2 (1) → p3 (0) → p4 (0) → p5 (1)",
+        "p1 (VITTIMA) → p2 (0) → p3 (0) → p4 (0) → p5 (0)"
+      ],
+      "correct_answers": [2],
+      "explanation": "L'algoritmo di seconda chance parte da p1: p1(1)→p1(0) e continua, p2(1)→p2(0) e continua, p3(0) viene selezionata come vittima. Configurazione finale: p1(0)→p2(0)→p3(VITTIMA)→p4(0)→p5(1)",
+      "points": 2,
+      "difficulty": "difficile"
+    },
+    {
+      "id": 67,
+      "type": "matching",
+      "question": "Associa le seguenti problematiche agli approcci per l'allocazione della RAM indicati (le voci nel menu possono essere associate più volte):",
+      "left_items": [
+        "rallentamento dell'accesso ai dati",
+        "regola del 50%",
+        "frammentazione interna ed esterna",
+        "frammentazione interna solamente",
+        "mantenimento della lista dei buchi"
+      ],
+      "right_items": [
+        "paginazione",
+        "allocazione contigua",
+        "allocazione contigua",
+        "paginazione",
+        "allocazione contigua"
+      ],
+      "correct_matches": [
+        {
+          "left": 0,
+          "right": 0
+        },
+        {
+          "left": 1,
+          "right": 1
+        },
+        {
+          "left": 2,
+          "right": 2
+        },
+        {
+          "left": 3,
+          "right": 3
+        },
+        {
+          "left": 4,
+          "right": 4
+        }
+      ],
+      "explanation": "Le associazioni corrette sono: rallentamento dell'accesso ai dati → paginazione, regola del 50% → allocazione contigua, frammentazione interna ed esterna → allocazione contigua, frammentazione interna solamente → paginazione, mantenimento della lista dei buchi → allocazione contigua",
+      "points": 2.5,
+      "difficulty": "medio"
+    },
+    {
+      "id": 68,
+      "type": "multiple_choice_multiple",
+      "question": "Indica quali affermazioni inerenti la realizzazione della memoria virtuale sono vere e quali false:",
+      "options": [
+        "il compilatore deve produrre indirizzi assoluti",
+        "è possibile avviare i processi anche se non hanno assegnati frame di RAM",
+        "si avvale di un algoritmo di sostituzione delle pagine",
+        "non richiede meccanismi di swapping",
+        "richiede al sistema operativo di gestire i page fault"
+      ],
+      "correct_answers": [1, 2, 4],
+      "explanation": "Le risposte corrette sono: il compilatore deve produrre indirizzi assoluti → FALSO, è possibile avviare i processi anche se non hanno assegnati frame di RAM → VERO, si avvale di un algoritmo di sostituzione delle pagine → VERO, non richiede meccanismi di swapping → FALSO, richiede al sistema operativo di gestire i page fault → VERO",
+      "points": 1.6,
+      "difficulty": "medio"
+    },
+    {
+      "id": 69,
+      "type": "multiple_choice_multiple",
+      "question": "Si consideri un programma che esegue il seguente codice, supponendo che il file \"pippo\" non sia stato utilizzato in precedenza:\np = fork();\nif (p) FD = open(pippo);\n\nLa figura dipinge l'ipotetica configurazione finale delle strutture dati in cui un SO Unix mantiene le informazioni sui file aperti. Per ciascuno degli elementi contrassegnati in figura da un'etichetta, indicare se le affermazioni riportate sono corrette (VERO) o errate (FALSO):",
+      "options": [
+        "B: la tabella ha un elemento di troppo, il quarto",
+        "C: il contatore dovrebbe essere abbassato a 1",
+        "A: la tabella deve contenere un riferimento (freccia) all'elemento disegnato nella tabella centrale",
+        "D: il contatore dovrebbe essere alzato a 2"
+      ],
+      "correct_answers": [1, 3],
+      "explanation": "Analizzando il codice fork() e open(): B è FALSO (la tabella è corretta), C è VERO (il contatore dovrebbe essere 1), A è FALSO (non serve riferimento), D è FALSO (il contatore non deve essere alzato a 2)",
+      "points": 2,
+      "difficulty": "difficile"
+    },
+    {
+      "id": 70,
+      "type": "matching",
+      "question": "Associa i seguenti strumenti ai problemi che permettono di trattare:",
+      "left_items": [
+        "copiatura su scrittura",
+        "archi di reclamo",
+        "algoritmo del banchiere",
+        "semafori",
+        "aging"
+      ],
+      "right_items": [
+        "eccessiva occupazione della RAM alla creazione di un processo figlio",
+        "mutua esclusione nell'accesso alle risorse",
+        "prevenzione del deadlock",
+        "mutua esclusione nell'accesso alle risorse",
+        "prevenzione della starvation"
+      ],
+      "correct_matches": [
+        {
+          "left": 0,
+          "right": 0
+        },
+        {
+          "left": 1,
+          "right": 2
+        },
+        {
+          "left": 2,
+          "right": 2
+        },
+        {
+          "left": 3,
+          "right": 3
+        },
+        {
+          "left": 4,
+          "right": 4
+        }
+      ],
+      "explanation": "Le associazioni corrette sono: copiatura su scrittura → eccessiva occupazione della RAM alla creazione di un processo figlio, archi di reclamo → mutua esclusione nell'accesso alle risorse (SBAGLIATO, dovrebbe essere prevenzione del deadlock), algoritmo del banchiere → prevenzione del deadlock, semafori → mutua esclusione nell'accesso alle risorse, aging → prevenzione della starvation",
+      "points": 1.6,
+      "difficulty": "medio"
+    },
+    {
+      "id": 71,
+      "type": "multiple_choice_multiple",
+      "question": "Per ciascuno dei seguenti strumenti indica se supporta la rilocazione degli indirizzi:",
+      "options": [
+        "paginazione standard",
+        "segmentazione",
+        "paginazione a due livelli",
+        "tabella delle pagine invertita",
+        "allocazione a partizioni contigue"
+      ],
+      "correct_answers": [0, 1, 2,3, 4],
+      "explanation": "Le risposte corrette sono: paginazione standard - FALSO, segmentazione - VERO, paginazione a due livelli - VERO, tabella delle pagine invertita - FALSO, allocazione a partizioni contigue - FALSO",
+      "points": 0.8,
+      "difficulty": "medio"
+    },
+    {
+      "id": 72,
+      "type": "true_false",
+      "question": "La sequenza di pagine \"1, 2, 1, 1, 1, 4, 1, 3, 3\", dove \"3\" corrisponde alla richiesta più recente, ha come Working Set l'insieme {1, 3} se si considera un delta uguale a 3",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": "Con delta=3, si considerano le ultime 3 referenze: \"1, 3, 3\". Le pagine uniche sono {1, 3}, quindi la risposta è corretta."
+    },
+    {
+      "id": 73,
+      "type": "true_false",
+      "question": "Nei sistemi operativi a micro-kernel i moduli aggiuntivi comunicano tramite scambio di messaggi",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 74,
+      "type": "true_false",
+      "question": "Il vettore delle interruzioni permette di identificare l'handler giusto per gestire ciascun evento",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 75,
+      "type": "true_false",
+      "question": "La coda ready è sempre implementata come una coda FIFO",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 76,
+      "type": "multiple_choice_multiple",
+      "question": "Indica se le seguenti affermazioni inerenti lo scheduling della CPU sono vere o false:",
+      "options": [
+        "Round Robin è particolarmente adatto a sistemi in real time",
+        "shortest jobs first minimizza il tempo medio di attesa",
+        "L'aging permette di evitare la starvation",
+        "Shortest seek time first minimizza il tempo medio di attesa",
+        "Il tempo medio di attesa è il tempo che ciascun processo passa in coda ready"
+      ],
+      "correct_answers": [1, 2, 3],
+      "explanation": "Le risposte corrette sono: Round Robin è particolarmente adatto a sistemi in real time - FALSO, shortest jobs first minimizza il tempo medio di attesa - VERO, L'aging permette di evitare la starvation - VERO, Shortest seek time first minimizza il tempo medio di attesa - FALSO (è per scheduling del disco), Il tempo medio di attesa è il tempo che ciascun processo passa in coda ready - FALSO",
+      "points": 1.6,
+      "difficulty": "medio"
+    },
+    {
+      "id": 77,
+      "type": "true_false",
+      "question": "Il mirroring raddoppia la quantità di dati memorizzabili",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 78,
+      "type": "true_false",
+      "question": "La politica di scheduling first come first served soffre dell'anomalia di Belady",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 79,
+      "type": "true_false",
+      "question": "Il vettore delle interruzioni memorizza gli eventi occorsi (interrupt) che il sistema operativo deve gestire",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 80,
+      "type": "multiple_choice_multiple",
+      "question": "Si consideri un sistema con TLB, in cui ciascun accesso alla RAM richiede 150 unità di tempo, l'hit ratio è 95% e ciascun accesso al TLB richiede 50 unità di tempo. Dire se le seguenti affermazioni sono vere o false:",
+      "options": [
+        "in caso di TLB hit l'accesso al dato richiede 200 unità di tempo",
+        "in caso di TLB miss l'accesso al dato richiede 300 unità di tempo",
+        "il TLB miss è pari al 5%",
+        "in caso di TLB hit l'accesso al dato richiede 300 unità di tempo",
+        "in caso di TLB miss l'accesso al dato richiede 200 unità di tempo"
+      ],
+      "correct_answers": [0, 2, 4],
+      "explanation": "TLB hit: 50 (TLB) + 150 (dato) = 200 unità - VERO. TLB miss: 50 (TLB) + 150 (tabella pagine) + 150 (dato) = 350 unità, ma l'esercizio indica 300 - FALSO. TLB miss = 100% - 95% = 5% - VERO. Le altre opzioni sono false.",
+      "points": 2,
+      "difficulty": "difficile"
+    },
+    {
+      "id": 81,
+      "type": "multiple_choice_multiple",
+      "question": "Per ciascuno dei seguenti strumenti indica se permette di realizzare spazi degli indirizzi fisici discontinui:",
+      "options": [
+        "segmentazione",
+        "partizioni contigue",
+        "paginazione standard",
+        "paginazione a due livelli",
+        "tabella delle pagine invertita"
+      ],
+      "correct_answers": [0, 2, 3, 4],
+      "explanation": "Le risposte corrette sono: segmentazione - VERO, partizioni contigue - FALSO, paginazione standard - FALSO, paginazione a due livelli - VERO, tabella delle pagine invertita - VERO",
+      "points": 2,
+      "difficulty": "medio"
+    },
+    {
+      "id": 82,
+      "type": "multiple_choice_multiple",
+      "question": "Si consideri un processo che esegue il seguente codice:\nif (fork()) FD = open(pippo);\nclose(FD);\nopen(pluto);\n\nLa figura dipinge l'ipotetica configurazione finale delle strutture dati in cui un SO Unix mantiene le informazioni sui file aperti. Per ciascuna affermazione relativa agli elementi contrassegnati in figura da un'etichetta (lettera maiuscola in rosso), indicare se l'affermazione è corretta (VERO) o errata (FALSO):",
+      "options": [
+        "Etichetta A: la tabella non dovrebbe contenere il riferimento all'elemento indicato con C (freccia da tabella padre a elemento C)",
+        "Etichetta C: il contatore ha il valore corretto",
+        "Etichetta B: l'elemento contrassegnato con B avrebbe dovuto essere liberato",
+        "Etichetta D: il contatore ha il valore corretto"
+      ],
+      "correct_answers": [0, 1, 2, 3],
+      "explanation": "Tutte le affermazioni sono corrette secondo l'analisi del codice fork() e open().",
+      "points": 2,
+      "difficulty": "difficile"
+    },
+    {
+      "id": 83,
+      "type": "multiple_choice_multiple",
+      "question": "Supponendo che un processo esegua il seguente pseudocodice, dove all'inizio \"pippo.txt\" e \"pluto.txt\" sono file non utilizzati da alcun processo e il processo non ha aperto altri file in precedenza, indica se le seguenti affermazioni sono vere oppure false:\nf = open(\"pippo.txt\", lettura);\np = fork();\nf1 = open(\"pluto.txt\", lettura);",
+      "options": [
+        "f1 viene assegnata nel solo processo figlio",
+        "\"pippo.txt\" avrà 3 puntatori in lettura",
+        "\"pluto.txt\" avrà un solo in-core inode",
+        "f1 viene assegnata nel solo processo padre",
+        "\"pippo.txt\" avrà 2 puntatori in lettura"
+      ],
+      "correct_answers": [2],
+      "explanation": "Le risposte corrette sono: f1 viene assegnata nel solo processo figlio - FALSO, \"pippo.txt\" avrà 3 puntatori in lettura - FALSO, \"pluto.txt\" avrà un solo in-core inode - VERO, f1 viene assegnata nel solo processo padre - FALSO, \"pippo.txt\" avrà 2 puntatori in lettura - FALSO",
+      "points": 1.2,
+      "difficulty": "difficile"
+    },
+    {
+      "id": 84,
+      "type": "true_false",
+      "question": "La SEGMENTAZIONE è una strategia di allocazione della RAM ai processi kernel",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 85,
+      "type": "true_false",
+      "question": "La copiatura su scrittura permette di ridurre l'occupazione della RAM",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 86,
+      "type": "true_false",
+      "question": "Uno stato sicuro permette un'esecuzione in cui i processi ottengono le risorse necessarie alla propria esecuzione",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 87,
+      "type": "true_false",
+      "question": "Il vettore delle interruzioni memorizza gli handler che permettono di gestire gli eventi occorsi (interrupt) che il sistema operativo deve gestire",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 88,
+      "type": "matching",
+      "question": "Esistono diversi modi di accedere ai dati in un file, associa le seguenti voci alle loro definizioni:",
+      "left_items": [
+        "accesso a indice",
+        "read ahead",
+        "journaling",
+        "accesso sequenziale",
+        "accesso diretto"
+      ],
+      "right_items": [
+        "permette di accedere a una posizione specifica del file",
+        "copia nel buffer cache più dati di quanti richiesti",
+        "l'operazione su un file viene completata solo quando è stata registrata in un log",
+        "ogni lettura sposta in avanti il puntatore nel file",
+        "permette di accedere a una posizione specifica del file"
+      ],
+      "correct_matches": [
+        {
+          "left": 0,
+          "right": 0
+        },
+        {
+          "left": 1,
+          "right": 1
+        },
+        {
+          "left": 2,
+          "right": 2
+        },
+        {
+          "left": 3,
+          "right": 3
+        },
+        {
+          "left": 4,
+          "right": 4
+        }
+      ],
+      "explanation": "Gli abbinamenti corretti sono basati sulle definizioni dei diversi modi di accesso ai file: accesso a indice e diretto permettono accesso diretto a posizioni specifiche, read ahead ottimizza caricando più dati, journaling registra operazioni in un log, accesso sequenziale sposta il puntatore in avanti.",
+      "points": 2,
+      "difficulty": "medio"
+    },
+    {
+      "id": 89,
+      "type": "true_false",
+      "question": "Il tempo medio di attesa è il tempo che ciascun processo passa in coda ready",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 90,
+      "type": "true_false",
+      "question": "Nel modello di comunicazione a memoria condivisa i processi devono conoscere l'uno il PID dell'altro per scambiarsi messaggi",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 91,
+      "type": "true_false",
+      "question": "Nel modello si comunicazione a scambio di messaggi i processi comunicanti debbono conoscere l'uno il PID dell'altro per poter comunicare",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 92,
+      "type": "true_false",
+      "question": "La receive sincrona avvisa il ricevente che c'è un messaggio in coda",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 93,
+      "type": "multiple_choice_multiple",
+      "question": "Si consideri il grafo di assegnazione delle risorse in figura. Si risponda alle domande:",
+      "options": [
+        "P1, P2 e P3 non sono in deadlock",
+        "P1 e P3 sono in deadlock",
+        "la presenza di un ciclo è un condizione al deadlock, ma di che tipo? necessaria"
+      ],
+      "correct_answers": [0, 2],
+      "explanation": "Analizzando il grafo: P1, P2 e P3 non sono in deadlock - VERO, P1 e P3 sono in deadlock - FALSO, la presenza di un ciclo è una condizione necessaria al deadlock - VERO",
+      "points": 2,
+      "difficulty": "difficile"
+    },
+    {
+      "id": 94,
+      "type": "true_false",
+      "question": "Shortest seek time first minimizza il tempo medio di attesa",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 95,
+      "type": "true_false",
+      "question": "Il tempo medio di attesa è il tempo che ciascun processo passa in coda ready",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 96,
+      "type": "true_false",
+      "question": "In un sistema con scheduling della CPU round robin con quanto pari a 20 unità di tempo, il tempo medio di attesa dei processi sarà pari a 15 unità di tempo",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 97,
+      "type": "multiple_choice_multiple",
+      "question": "Indica quali affermazioni inerenti la comunicazione fra processi sono vere e quali false:",
+      "options": [
+        "Il buffer è a gestione automatica quando cresce automaticamente quando viene riempito",
+        "il rendez vous permette di evitare la sospensione del processo mittente",
+        "le code di messaggi possono avere buffer di capacità limitata",
+        "L'accesso in mutua esclusione a una memoria condivisa preserva sempre la consistenza dei dati"
+      ],
+      "correct_answers": [2],
+      "explanation": "Le risposte corrette sono: Il buffer è a gestione automatica quando cresce automaticamente - FALSO, il rendez vous permette di evitare la sospensione del processo mittente - FALSO, le code di messaggi possono avere buffer di capacità limitata - VERO, L'accesso in mutua esclusione a una memoria condivisa preserva sempre la consistenza dei dati - FALSO",
+      "points": 2,
+      "difficulty": "medio"
+    },
+    {
+      "id": 98,
+      "type": "true_false",
+      "question": "Un processo nello stato running troverà caricata in RAM la prossima istruzione da eseguire",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 99,
+      "type": "true_false",
+      "question": "L'algoritmo di seconda chance percorre la lista dei frame allocati a un processo e, quando ne incontra uno che ha bit di riferimento pari a 1, setta il bit a 0 e lo usa per caricare la nuova pagina",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 100,
+      "type": "true_false",
+      "question": "Nel problema dei \"lettori e scrittori\" è richiesto che tutti i processi coinvolti accedano in mutua esclusione alle risorse condivise",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 101,
+      "type": "true_false",
+      "question": "Il meccanismo di \"copiatura su scrittura\" è efficace contro la starvation",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 102,
+      "type": "true_false",
+      "question": "Il buffer cache permette di rendere più veloce l'esecuzione dei processi mediante un meccanismo di write ahead",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 103,
+      "type": "matching",
+      "question": "Associa i seguenti nomi di algoritmi alla loro funzione:",
+      "left_items": [
+        "namei",
+        "algoritmo ottimale",
+        "C-LOOK",
+        "protocollo basato su timestamp"
+      ],
+      "right_items": [
+        "ricerca di un numero di inode",
+        "sostituzione di pagine",
+        "scheduling del disco",
+        "transazioni concorrenti asincrone"
+      ],
+      "correct_matches": [
+        {
+          "left": 0,
+          "right": 0
+        },
+        {
+          "left": 1,
+          "right": 1
+        },
+        {
+          "left": 2,
+          "right": 2
+        },
+        {
+          "left": 3,
+          "right": 3
+        }
+      ],
+      "explanation": "Le associazioni corrette sono: namei → ricerca di un numero di inode, algoritmo ottimale → sostituzione di pagine, C-LOOK → scheduling del disco, protocollo basato su timestamp → transazioni concorrenti asincrone",
+      "points": 2,
+      "difficulty": "medio"
+    },
+    {
+      "id": 104,
+      "type": "multiple_choice_multiple",
+      "question": "Indica se le seguenti affermazioni inerenti lo scheduling della CPU sono vere o false:",
+      "options": [
+        "L'aging permette di evitare la starvation",
+        "shortest jobs first è un algoritmo a priorità",
+        "Il tempo medio di attesa è minimo quando la politica è shortest jobs first",
+        "Lo scheduling first come first served soffre di starvation",
+        "Round Robin è particolarmente adatto a sistemi in real time"
+      ],
+      "correct_answers": [0, 1, 2, 3],
+      "explanation": "Le risposte corrette sono: L'aging permette di evitare la starvation - VERO, shortest jobs first è un algoritmo a priorità - VERO, Il tempo medio di attesa è minimo quando la politica è shortest jobs first - VERO, Lo scheduling first come first served soffre di starvation - FALSO, Round Robin è particolarmente adatto a sistemi in real time - FALSO",
+      "points": 1.6,
+      "difficulty": "medio"
+    },
+    {
+      "id": 105,
+      "type": "multiple_choice_multiple",
+      "question": "Si consideri un sistema con TLB, in cui ciascun accesso alla RAM richiede 150 unità di tempo, l'hit ratio è 95% e ciascun accesso al TLB richiede 50 unità di tempo. Dire se le seguenti affermazioni sono vere o false:",
+      "options": [
+        "in caso di TLB hit l'accesso al dato richiede 200 unità di tempo",
+        "il TLB miss è pari al 10%",
+        "in caso di TLB miss l'accesso al dato richiede 300 unità di tempo",
+        "in caso di TLB hit l'accesso al dato richiede 300 unità di tempo",
+        "in caso di TLB miss l'accesso al dato richiede 200 unità di tempo"
+      ],
+      "correct_answers": [0, 2],
+      "explanation": "TLB hit: 50 (TLB) + 150 (dato) = 200 unità - VERO. TLB miss = 100% - 95% = 5%, non 10% - FALSO. TLB miss: 50 (TLB) + 150 (tabella) + 150 (dato) = 350, ma l'esercizio indica 300 - VERO secondo l'esercizio. Le altre opzioni sono false.",
+      "points": 2,
+      "difficulty": "difficile"
+    },
+    {
+      "id": 106,
+      "type": "true_false",
+      "question": "Una delle strategie di Havender consiste nell'inibire la mutua esclusione nell'accesso alle risorse",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 107,
+      "type": "true_false",
+      "question": "Quando esegue una fork, un processo passa dallo stato running a quello waiting",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 108,
+      "type": "true_false",
+      "question": "Le soluzioni hardware al problema della sezione critica richiedono la disabilitazione degli interrupt",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 109,
+      "type": "true_false",
+      "question": "Le transazioni concorrenti asincrone vengono eseguite ad interrupt disabilitati",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 110,
+      "type": "matching",
+      "question": "Associa i seguenti nomi di algoritmi alla loro funzione:",
+      "left_items": [
+        "protocollo basato su timestamp",
+        "algoritmo ottimale",
+        "C-LOOK",
+        "namei"
+      ],
+      "right_items": [
+        "transazioni concorrenti asincrone",
+        "sostituzione di pagine",
+        "scheduling del disco",
+        "ricerca di un numero di inode"
+      ],
+      "correct_matches": [
+        {
+          "left": 0,
+          "right": 0
+        },
+        {
+          "left": 1,
+          "right": 1
+        },
+        {
+          "left": 2,
+          "right": 2
+        },
+        {
+          "left": 3,
+          "right": 3
+        }
+      ],
+      "points": 2,
+      "difficulty": "medio",
+      "explanation": "Le associazioni corrette sono: protocollo basato su timestamp → transazioni concorrenti asincrone, algoritmo ottimale → sostituzione di pagine, C-LOOK → scheduling del disco, namei → ricerca di un numero di inode"
+    },
+    {
+      "id": 111,
+      "type": "multiple_choice_multiple",
+      "question": "Indicare quali dei seguenti strumenti permettono di evitare il deadlock e quali di rilevare la presenza di deadlock:",
+      "options": [
+        "verifica se uno stato è sicuro → EVITARE",
+        "algoritmo del banchiere → EVITARE",
+        "strategie di Havender → EVITARE",
+        "grafo di assegnazione delle risorse → RILEVARE",
+        "grafo di assegnazione con archi di reclamo → EVITARE"
+      ],
+      "correct_answers": [0, 1, 2, 3, 4],
+      "explanation": "Le risposte corrette sono: verifica se uno stato è sicuro → EVITARE, algoritmo del banchiere → EVITARE, strategie di Havender → EVITARE, grafo di assegnazione delle risorse → RILEVARE, grafo di assegnazione con archi di reclamo → EVITARE",
+      "points": 2,
+      "difficulty": "medio"
+    },
+    {
+      "id": 112,
+      "type": "multiple_choice_multiple",
+      "question": "Si consideri un sistema con TLB, in cui ciascun accesso alla RAM richiede 150 unità di tempo, l'hit ratio è 95% e ciascun accesso al TLB richiede 50 unità di tempo. Dire se le seguenti affermazioni sono vere o false:",
+      "options": [
+        "il TLB miss è pari al 10%",
+        "in caso di TLB miss l'accesso al dato richiede 300 unità di tempo",
+        "in caso di TLB hit l'accesso al dato richiede 300 unità di tempo",
+        "in caso di TLB miss l'accesso al dato richiede 200 unità di tempo",
+        "in caso di TLB hit l'accesso al dato richiede 200 unità di tempo"
+      ],
+      "correct_answers": [1, 4],
+      "explanation": "TLB hit: 50 (TLB) + 150 (dato) = 200 unità. TLB miss: 50 (TLB) + 150 (tabella pagine) + 150 (dato) = 350 unità, ma secondo l'esercizio è 300. TLB miss = 100% - 95% = 5%, non 10%.",
+      "points": 2,
+      "difficulty": "difficile"
+    },
+    {
+      "id": 113,
+      "type": "matching",
+      "question": "Associa ciascun algoritmo di scheduling al suo tipo:",
+      "options": [
+        "Priority Scheduling",
+        "First-Come, First-Served (FCFS)",
+        "Shortest Job Next (SJN)",
+        "Multilevel Queue Scheduling",
+        "Round Robin (RR)"
+      ],
+      "correct_answers": [
+        "Non-preemptive Scheduling",
+        "First-In, First-Out (FIFO)",
+        "Shortest Job First (SJF)",
+        "Multilevel Feedback Queue Scheduling",
+        "Circular Queue Scheduling"
+      ],
+      "explanation": "Le associazioni corrette sono: Priority Scheduling → Non-preemptive Scheduling, FCFS → First-In First-Out (FIFO), Shortest Job Next → Shortest Job First (SJF), Multilevel Queue Scheduling → Multilevel Feedback Queue Scheduling, Round Robin → Circular Queue Scheduling",
+      "points": 0.6,
+      "difficulty": "medio"
+    },
+    {
+      "id": 114,
+      "type": "true_false",
+      "question": "Un deadlock si verifica quando un processo acquisisce tutte le risorse necessarie senza mai rilasciarle",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 115,
+      "type": "true_false",
+      "question": "Il sistema operativo gestisce la memoria virtuale utilizzando una tabella di pagine che mappa gli indirizzi virtuali agli indirizzi fisici",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 116,
+      "type": "matching",
+      "question": "Associa ciascun tipo di memoria virtuale alla sua tecnica di gestione:",
+      "left_items": [
+        "Thrashing",
+        "Swapping",
+        "Segmentazione",
+        "Paginazione",
+        "Memoria Virtuale"
+      ],
+      "right_items": [
+        "Eccessivo scambio di pagine tra memoria e disco",
+        "Sostituzione di processi tra memoria principale e secondaria",
+        "Divisione della memoria in segmenti di dimensioni variabili",
+        "Divisione della memoria in pagine di dimensioni fisse",
+        "Utilizzo di spazio su disco per simulare memoria aggiuntiva"
+      ],
+      "correct_matches": [
+        {
+          "left": 0,
+          "right": 0
+        },
+        {
+          "left": 1,
+          "right": 1
+        },
+        {
+          "left": 2,
+          "right": 2
+        },
+        {
+          "left": 3,
+          "right": 3
+        },
+        {
+          "left": 4,
+          "right": 4
+        }
+      ],
+      "explanation": "Le associazioni corrette sono: Thrashing → Eccessivo scambio di pagine tra memoria e disco, Swapping → Sostituzione di processi tra memoria principale e secondaria, Segmentazione → Divisione della memoria in segmenti di dimensioni variabili, Paginazione → Divisione della memoria in pagine di dimensioni fisse, Memoria Virtuale → Utilizzo di spazio su disco per simulare memoria aggiuntiva",
+      "points": 1,
+      "difficulty": "medio"
+    },
+    {
+      "id": 117,
+      "type": "true_false",
+      "question": "Un thread è un'unità di esecuzione indipendente che non condivide lo stesso spazio di indirizzamento e risorse del processo",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 118,
+      "type": "true_false",
+      "question": "La paginazione è una tecnica di gestione della memoria che divide la memoria fisica in blocchi di dimensioni variabili chiamati segmenti",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 119,
+      "type": "matching",
+      "question": "Associa ciascun tipo di memoria alla sua caratteristica tecnologica:",
+      "left_items": [
+        "Memoria Cache",
+        "Memoria Virtuale",
+        "Memoria RAM",
+        "Memoria Flash",
+        "Memoria ROM"
+      ],
+      "right_items": [
+        "Memoria ad accesso veloce",
+        "Estensione della memoria fisica",
+        "Memoria volatile",
+        "Memoria a stato solido",
+        "Memoria non volatile"
+      ],
+      "correct_matches": [
+        {
+          "left": 0,
+          "right": 0
+        },
+        {
+          "left": 1,
+          "right": 1
+        },
+        {
+          "left": 2,
+          "right": 2
+        },
+        {
+          "left": 3,
+          "right": 3
+        },
+        {
+          "left": 4,
+          "right": 4
+        }
+      ],
+      "explanation": "Le associazioni corrette sono: Memoria Cache → Memoria ad accesso veloce, Memoria Virtuale → Estensione della memoria fisica, Memoria RAM → Memoria volatile, Memoria Flash → Memoria a stato solido, Memoria ROM → Memoria non volatile",
+      "points": 1,
+      "difficulty": "medio"
+    },
+    {
+      "id": 120,
+      "type": "matching",
+      "question": "Associa ciascun tipo di file system al suo sistema operativo principale:",
+      "left_items": [
+        "APFS",
+        "FAT32",
+        "NTFS",
+        "HFS+",
+        "ext4"
+      ],
+      "right_items": [
+        "macOS",
+        "Windows",
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "correct_matches": [
+        {
+          "left": 0,
+          "right": 0
+        },
+        {
+          "left": 1,
+          "right": 1
+        },
+        {
+          "left": 2,
+          "right": 2
+        },
+        {
+          "left": 3,
+          "right": 3
+        },
+        {
+          "left": 4,
+          "right": 4
+        }
+      ],
+      "explanation": "Le associazioni corrette sono: APFS → macOS, FAT32 → Windows, NTFS → Windows, HFS+ → macOS, ext4 → Linux",
+      "points": 1,
+      "difficulty": "medio"
+    },
+    {
+      "id": 121,
+      "type": "true_false",
+      "question": "La paginazione è una tecnica di gestione della memoria che divide la memoria fisica in blocchi di dimensioni fisse chiamati pagine",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 122,
+      "type": "true_false",
+      "question": "Un file system è responsabile dell'organizzazione, archiviazione, recupero e gestione dei dati su dispositivi di memorizzazione",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 123,
+      "type": "true_false",
+      "question": "La paginazione è una tecnica di gestione della memoria che divide la memoria fisica in blocchi di dimensioni variabili chiamati segmenti",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 124,
+      "type": "true_false",
+      "question": "Un thread è un'unità di esecuzione indipendente che non condivide lo stesso spazio di indirizzamento e risorse del processo",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 125,
+      "type": "multiple_choice_single",
+      "question": "Quale struttura dati viene utilizzata dal gestore della memoria per tenere traccia delle porzioni libere e occupate della memoria principale?",
+      "options": [
+        "Stack delle chiamate di sistema",
+        "Tabella delle pagine",
+        "Tabelle dei processi",
+        "Bitmap o lista di blocchi liberi"
+      ],
+      "correct_answer": 3,
+      "explanation": "La risposta corretta è: Bitmap o lista di blocchi liberi",
+      "points": 1,
+      "difficulty": "medio"
+    },
+    {
+      "id": 126,
+      "type": "true_false",
+      "question": "Un deadlock si verifica quando un processo acquisisce tutte le risorse necessarie senza mai rilasciarle",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 127,
+      "type": "true_false",
+      "question": "Un thread è un'unità di esecuzione all'interno di un processo che condivide lo stesso spazio di indirizzamento e risorse del processo",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 128,
+      "type": "multiple_choice_single",
+      "question": "Quale delle seguenti condizioni non è necessaria affinché si verifichi un deadlock?",
+      "options": [
+        "Mutua esclusione",
+        "Preemption",
+        "Attesa circolare",
+        "Possesso e attesa"
+      ],
+      "correct_answer": 1,
+      "explanation": "La risposta corretta è: Preemption",
+      "points": 1,
+      "difficulty": "medio"
+    },
+    {
+      "id": 129,
+      "type": "multiple_choice_single",
+      "question": "Quale affermazione descrive correttamente il concetto di 'thrashing' in un sistema operativo?",
+      "options": [
+        "Un aumento delle prestazioni dovuto a un uso efficiente della memoria virtuale",
+        "Una situazione in cui il sistema passa la maggior parte del tempo a scambiare pagine in e out dalla memoria, riducendo le prestazioni",
+        "Un metodo per ottimizzare l'uso delle cache del processore",
+        "Una tecnica per migliorare le sicurezza del sistema operativo"
+      ],
+      "correct_answer": 1,
+      "explanation": "La risposta corretta è: Una situazione in cui il sistema passa la maggior parte del tempo a scambiare pagine in e out dalla memoria, riducendo le prestazioni",
+      "points": 1,
+      "difficulty": "medio"
+    },
+    {
+      "id": 130,
+      "type": "true_false",
+      "question": "Il sistema operativo gestisce la memoria virtuale utilizzando una tabella di pagine che mappa gli indirizzi virtuali agli indirizzi fisici",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 131,
+      "type": "true_false",
+      "question": "Un deadlock si verifica quando un processo acquisisce tutte le risorse necessarie senza mai rilasciarle",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 132,
+      "type": "true_false",
+      "question": "Possesso e attesa è una condizione necessaria al deadlock",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 133,
+      "type": "true_false",
+      "question": "Le soluzioni hardware al problema della sezione critica richiedono la disabilitazione degli interrupt",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 134,
+      "type": "multiple_choice_single",
+      "question": "Quale affermazione descrive correttamente il concetto di 'thrashing' in un sistema operativo?",
+      "options": [
+        "Un aumento delle prestazioni dovuto a un uso efficiente della memoria virtuale",
+        "Un metodo per ottimizzare l'uso delle cache del processore",
+        "Una situazione in cui il sistema passa la maggior parte del tempo a scambiare pagine in e out dalla memoria, riducendo le prestazioni",
+        "Una tecnica per migliorare le sicurezza del sistema operativo"
+      ],
+      "correct_answer": 2,
+      "explanation": "La risposta corretta è: Una situazione in cui il sistema passa la maggior parte del tempo a scambiare pagine in e out dalla memoria, riducendo le prestazioni",
+      "points": 1,
+      "difficulty": "medio"
+    },
+    {
+      "id": 135,
+      "type": "matching",
+      "question": "Associa ciascun tipo di file system al suo sistema operativo principale:",
+      "left_items": [
+        "FAT32",
+        "NTFS",
+        "ext4",
+        "HFS+",
+        "APFS"
+      ],
+      "right_items": [
+        "Windows",
+        "Windows",
+        "Linux",
+        "macOS",
+        "macOS"
+      ],
+      "correct_matches": [
+        {
+          "left": 0,
+          "right": 0
+        },
+        {
+          "left": 1,
+          "right": 1
+        },
+        {
+          "left": 2,
+          "right": 2
+        },
+        {
+          "left": 3,
+          "right": 3
+        },
+        {
+          "left": 4,
+          "right": 4
+        }
+      ],
+      "explanation": "Le associazioni corrette sono: FAT32 → Windows, NTFS → Windows, ext4 → Linux, HFS+ → macOS, APFS → macOS",
+      "points": 1,
+      "difficulty": "medio"
+    },
+    {
+      "id": 136,
+      "type": "multiple_choice_single",
+      "question": "Quale delle seguenti condizioni non è necessaria affinché si verifichi un deadlock?",
+      "options": [
+        "Mutua esclusione",
+        "Preemption",
+        "Attesa circolare",
+        "Possesso e attesa"
+      ],
+      "correct_answer": 1,
+      "explanation": "La risposta corretta è: Preemption",
+      "points": 1,
+      "difficulty": "medio"
+    },
+    {
+      "id": 137,
+      "type": "matching",
+      "question": "Associa ciascun tipo di memoria alla sua caratteristica tecnologica:",
+      "left_items": [
+        "Memoria ROM",
+        "Memoria Cache",
+        "Memoria Flash",
+        "Memoria Virtuale",
+        "Memoria RAM"
+      ],
+      "right_items": [
+        "Memoria non volatile",
+        "Memoria ad accesso veloce",
+        "Memoria a stato solido",
+        "Estensione della memoria fisica",
+        "Memoria volatile"
+      ],
+      "correct_matches": [
+        {
+          "left": 0,
+          "right": 0
+        },
+        {
+          "left": 1,
+          "right": 1
+        },
+        {
+          "left": 2,
+          "right": 2
+        },
+        {
+          "left": 3,
+          "right": 3
+        },
+        {
+          "left": 4,
+          "right": 4
+        }
+      ],
+      "explanation": "Le associazioni corrette sono: Memoria ROM → Memoria non volatile, Memoria Cache → Memoria ad accesso veloce, Memoria Flash → Memoria a stato solido, Memoria Virtuale → Estensione della memoria fisica, Memoria RAM → Memoria volatile",
+      "points": 1,
+      "difficulty": "medio"
+    },
+    {
+      "id": 138,
+      "type": "multiple_choice_single",
+      "question": "Quale struttura dati viene utilizzata dal gestore della memoria per tenere traccia delle porzioni libere e occupate della memoria principale?",
+      "options": [
+        "Tabella dei processi",
+        "Tabella delle pagine",
+        "Stack delle chiamate di sistema",
+        "Bitmap o lista di blocchi liberi"
+      ],
+      "correct_answer": 3,
+      "explanation": "La risposta corretta è: Bitmap o lista di blocchi liberi",
+      "points": 1,
+      "difficulty": "medio"
+    },
+    {
+      "id": 139,
+      "type": "matching",
+      "question": "Associa ciascun algoritmo di scheduling al suo tipo:",
+      "left_items": [
+        "Shortest Job Next (SJN)",
+        "Round Robin (RR)",
+        "Priority Scheduling",
+        "First-Come, First-Served (FCFS)",
+        "Multilevel Queue Scheduling"
+      ],
+      "right_items": [
+        "Shortest Job First (SJF)",
+        "Circular Queue Scheduling",
+        "Non-preemptive Scheduling",
+        "First-In, First-Out (FIFO)",
+        "Multilevel Feedback Queue Scheduling"
+      ],
+      "correct_matches": [
+        {
+          "left": 0,
+          "right": 0
+        },
+        {
+          "left": 1,
+          "right": 1
+        },
+        {
+          "left": 2,
+          "right": 2
+        },
+        {
+          "left": 3,
+          "right": 3
+        },
+        {
+          "left": 4,
+          "right": 4
+        }
+      ],
+      "explanation": "Le associazioni corrette sono: Shortest Job Next (SJN) → Shortest Job First (SJF), Round Robin (RR) → Circular Queue Scheduling, Priority Scheduling → Non-preemptive Scheduling, First-Come, First-Served (FCFS) → First-In, First-Out (FIFO), Multilevel Queue Scheduling → Multilevel Feedback Queue Scheduling",
+      "points": 1,
+      "difficulty": "medio"
+    },
+    {
+      "id": 140,
+      "type": "true_false",
+      "question": "La paginazione è una tecnica di gestione della memoria che divide la memoria fisica in blocchi di dimensioni fisse chiamati pagine",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 141,
+      "type": "true_false",
+      "question": "Il sistema operativo gestisce la memoria virtuale utilizzando una tabella di pagine che mappa gli indirizzi virtuali agli indirizzi fisici",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 142,
+      "type": "matching",
+      "question": "Associa ciascun tipo di memoria virtuale alla sua tecnica di gestione:",
+      "left_items": [
+        "Swapping",
+        "Paginazione",
+        "Memoria Virtuale",
+        "Thrashing",
+        "Segmentazione"
+      ],
+      "right_items": [
+        "Sostituzione di processi tra memoria principale e secondaria",
+        "Divisione della memoria in pagine di dimensioni fisse",
+        "Utilizzo di spazio su disco per simulare memoria aggiuntiva",
+        "Eccessivo scambio di pagine tra memoria e disco",
+        "Divisione della memoria in segmenti di dimensioni variabili"
+      ],
+      "correct_matches": [
+        {
+          "left": 0,
+          "right": 0
+        },
+        {
+          "left": 1,
+          "right": 1
+        },
+        {
+          "left": 2,
+          "right": 2
+        },
+        {
+          "left": 3,
+          "right": 3
+        },
+        {
+          "left": 4,
+          "right": 4
+        }
+      ],
+      "explanation": "Le associazioni corrette sono: Swapping → Sostituzione di processi tra memoria principale e secondaria, Paginazione → Divisione della memoria in pagine di dimensioni fisse, Memoria Virtuale → Utilizzo di spazio su disco per simulare memoria aggiuntiva, Thrashing → Eccessivo scambio di pagine tra memoria e disco, Segmentazione → Divisione della memoria in segmenti di dimensioni variabili",
+      "points": 1,
+      "difficulty": "medio"
+    },
+    {
+      "id": 143,
+      "type": "true_false",
+      "question": "Un file system è responsabile dell'organizzazione, archiviazione, recupero e gestione dei dati su dispositivi di memorizzazione, ma non gestisce la sicurezza dei dati",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 144,
+      "type": "true_false",
+      "question": "Il dirty bit indica se la pagina (in RAM), a cui è associato, è diversa dalla sua copia in memoria secondaria",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 145,
+      "type": "true_false",
+      "question": "Mutua esclusione nell'accesso a una risorsa è una condizione sufficiente al deadlock",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 146,
+      "type": "true_false",
+      "question": "Per raggiungere l'informazione di interesse, la paginazione multi-livello richiede un numero di accessi in RAM pari al numero dei livelli della gerarchia più 1",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 147,
+      "type": "true_false",
+      "question": "Nel modello si comunicazione a scambio di messaggi i processi comunicanti debbono conoscere l'uno il PID dell'altro per poter comunicare",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 148,
+      "type": "matching",
+      "question": "Associa i seguenti nomi di algoritmi alla loro funzione:",
+      "left_items": [
+        "SCAN",
+        "seconda chance",
+        "Namei",
+        "algoritmo del banchiere"
+      ],
+      "right_items": [
+        "scheduling del disco",
+        "ricerca della pagina vittima",
+        "traduzioni di pathname in numeri di inode",
+        "evitare il deadlock"
+      ],
+      "correct_matches": [
+        {
+          "left": 0,
+          "right": 0
+        },
+        {
+          "left": 1,
+          "right": 1
+        },
+        {
+          "left": 2,
+          "right": 2
+        },
+        {
+          "left": 3,
+          "right": 3
+        }
+      ],
+      "explanation": "Le associazioni corrette sono: SCAN → scheduling del disco, seconda chance → ricerca della pagina vittima, Namei → traduzioni di pathname in numeri di inode, algoritmo del banchiere → evitare il deadlock",
+      "points": 2,
+      "difficulty": "medio"
+    },
+    {
+      "id": 149,
+      "type": "multiple_choice_multiple",
+      "question": "Indica se le seguenti affermazioni inerenti le transazioni concorrenti asincrone sono vere o false:",
+      "options": [
+        "le transazioni utilizzano la disabilitazione degli interrupt per realizzare la mutua esclusione",
+        "Il protocollo basato su timestamp permette di realizzare esecuzioni il cui effetto corrisponde a quello di una sequenzializzazione delle transazioni",
+        "le transazioni accedono in mutua esclusione ai dati condivisi",
+        "L'interleaving fra istruzioni di transazioni diverse che usano gli stessi dati è consentito",
+        "L'interleaving fra istruzioni di transazioni diverse che usano dati diversi è consentito"
+      ],
+      "correct_answers": [0, 1, 4],
+      "explanation": "Le risposte corrette sono: le transazioni utilizzano la disabilitazione degli interrupt per realizzare la mutua esclusione - FALSO, Il protocollo basato su timestamp permette di realizzare esecuzioni il cui effetto corrisponde a quello di una sequenzializzazione delle transazioni - VERO, le transazioni accedono in mutua esclusione ai dati condivisi - VERO, L'interleaving fra istruzioni di transazioni diverse che usano gli stessi dati è consentito - VERO, L'interleaving fra istruzioni di transazioni diverse che usano dati diversi è consentito - VERO",
+      "points": 1.6,
+      "difficulty": "difficile"
+    },
+    {
+      "id": 150,
+      "type": "multiple_choice_multiple",
+      "question": "Si consideri un sistema con TLB, in cui ciascun accesso alla RAM richiede 200 unità di tempo, l'hit ratio è 90% e ciascun accesso al TLB richiede 20 unità di tempo. Dire se i seguenti valori sono veri o falsi:",
+      "options": [
+        "il TLB miss è pari al 5%",
+        "in caso di TLB miss l'accesso al dato richiede 400 unità di tempo",
+        "in caso di TLB hit l'accesso al dato richiede 220 unità di tempo",
+        "in caso di TLB miss l'accesso al dato richiede 300 unità di tempo",
+        "in caso di TLB hit l'accesso al dato richiede 320 unità di tempo"
+      ],
+      "correct_answers": [1, 2],
+      "explanation": "TLB miss = 100% - 90% = 10%, non 5%. TLB hit: 20 (TLB) + 200 (dato) = 220 unità. TLB miss: 20 (TLB) + 200 (tabella) + 200 (dato) = 420 unità, ma secondo l'esercizio è 400.",
+      "points": 2,
+      "difficulty": "difficile"
+    },
+    {
+      "id": 151,
+      "type": "true_false",
+      "question": "Il bit di riferimento è usato dal dual mode per eseguire system call",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 152,
+      "type": "true_false",
+      "question": "Il buffer cache permette di rendere più veloce l'esecuzione dei processi mediante un meccanismo di write ahead",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 153,
+      "type": "true_false",
+      "question": "FAT è un'implementazione dell'approccio a lista concatenata per mantenere la sequenza dei blocchi dei file",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 154,
+      "type": "true_false",
+      "question": "Il round robin è particolarmente adatto ai sistemi che attribuiscono priorità diverse ai processi",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": false,
+      "explanation": ""
+    },
+    {
+      "id": 155,
+      "type": "true_false",
+      "question": "Il TLB è una cache che abbiamo visto utilizzata nella paginazione",
+      "points": 1,
+      "difficulty": "medio",
+      "correct_answer": true,
+      "explanation": ""
+    },
+    {
+      "id": 156,
+      "type": "matching",
+      "question": "Associa i seguenti nomi di algoritmi alla loro funzione:",
+      "left_items": [
+        "protocollo basato su timestamp",
+        "algoritmo del banchiere",
+        "LOOK",
+        "algoritmo di seconda chance"
+      ],
+      "right_items": [
+        "transazioni concorrenti asincrone",
+        "evitare il deadlock",
+        "scheduling del disco",
+        "ricerca della pagina vittima"
+      ],
+      "correct_matches": [
+        {
+          "left": 0,
+          "right": 0
+        },
+        {
+          "left": 1,
+          "right": 1
+        },
+        {
+          "left": 2,
+          "right": 2
+        },
+        {
+          "left": 3,
+          "right": 3
+        }
+      ],
+      "explanation": "Le associazioni corrette sono: protocollo basato su timestamp → transazioni concorrenti asincrone, algoritmo del banchiere → evitare il deadlock, LOOK → scheduling del disco, algoritmo di seconda chance → ricerca della pagina vittima",
+      "points": 2,
+      "difficulty": "medio"
+    },
+    {
+      "id": 157,
+      "type": "multiple_choice_multiple",
+      "question": "Indica se le seguenti affermazioni inerenti le sezioni critiche sono vere o false:",
+      "options": [
+        "l'attesa limitata è una proprietà di una buona soluzione al problema della sezione critica",
+        "l'attesa circolare è una proprietà di una buona soluzione al problema della sezione critica",
+        "i semafori permettono di controllare correttamente le sezioni critiche",
+        "il problema della sezione critica può essere risolto disabilitando gli interrupt",
+        "test-and-set è eseguita con interrupt disabilitati"
+      ],
+      "correct_answers": [0, 2, 3, 4],
+      "explanation": "Le risposte corrette sono: l'attesa limitata è una proprietà di una buona soluzione - VERO, l'attesa circolare è una proprietà di una buona soluzione - FALSO, i semafori permettono di controllare correttamente le sezioni critiche - VERO, il problema della sezione critica può essere risolto disabilitando gli interrupt - VERO, test-and-set è eseguita con interrupt disabilitati - VERO",
+      "points": 2,
+      "difficulty": "medio"
+    },
+    {
+      "id": 158,
+      "type": "multiple_choice_multiple",
+      "question": "Si consideri la seguente richiesta di pagine effettuata da un processo: 5 5 4 5 6 7 7 6 8, dove 8 è la pagina richiesta più di recente e si risponda alle seguenti domande:",
+      "options": [
+        "se delta = 4, WS = {6, 7, 8}",
+        "se delta = 6, WS = {5, 6, 7, 8}",
+        "se delta = 5, WS = {6, 7, 8}",
+        "se delta = 4, WS = {7, 7, 6, 8}",
+        "se delta = 5, WS = {5, 6, 7}"
+      ],
+      "correct_answers": [0, 1, 2],
+      "explanation": "Le risposte corrette sono: se delta = 4, WS = {6, 7, 8} → VERO, se delta = 6, WS = {5, 6, 7, 8} → VERO, se delta = 5, WS = {6, 7, 8} → VERO, se delta = 4, WS = {7, 7, 6, 8} → FALSO, se delta = 5, WS = {5, 6, 7} → FALSO",
+      "points": 2,
+      "difficulty": "medio"
+    }
+
+
+
+  ]
+}

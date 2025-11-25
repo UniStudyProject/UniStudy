@@ -606,6 +606,7 @@ function checkForStoredData() {
     }
 }
 
+// Da togliere in futuro
 function handleKeyboardShortcuts(e) {
     // ESC to close modals
     if (e.key === 'Escape') {
