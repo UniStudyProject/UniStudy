@@ -57,6 +57,8 @@
     const activeSubjects = [
         "Analisi", 
         "Programmazione I",
+        "Sistemi Intelligenti",
+
         // Aggiungi qui le materie pronte...
     ];
 
@@ -203,3 +205,59 @@
             // showToast("Filtri resettati con successo");
         }
     };
+
+// ==========================================
+// FUNZIONE INIZIA (Modificata per leggere i file reali)
+// ==========================================
+window.playExercises = async function(subject) {
+    // 1. Crea il nome del file basato sul nome della materia
+    // Esempio: "Sistemi Intelligenti" -> "sistemi intelligenti.json"
+    // Nota: Assicurati che i file nella cartella media siano tutti in minuscolo!
+    const fileName = subject.toLowerCase() + '.json';
+    const filePath = `media/${fileName}`; // Percorso relativo per GitHub Pages
+
+    // Mostra un feedback visivo (opzionale, cursore di attesa)
+    document.body.style.cursor = 'wait';
+
+    try {
+        // 2. Prova a scaricare il file JSON reale
+        const response = await fetch(filePath);
+
+        let exerciseData;
+
+        if (response.ok) {
+            // CASO A: Il file ESISTE! Lo usiamo.
+            console.log(`File trovato: ${filePath}`);
+            exerciseData = await response.json();
+        } else {
+            // CASO B: Il file NON esiste (404). Usiamo i dati di prova.
+            console.warn(`File non trovato (${filePath}), uso dati generati.`);
+            exerciseData = generateSampleData(subject);
+        }
+
+        // 3. Salva i dati in sessionStorage per la pagina degli esercizi
+        startExerciseSession(exerciseData);
+
+    } catch (error) {
+        console.error("Errore durante il caricamento:", error);
+        // In caso di errore grave, fallback sui dati generati
+        const fallbackData = generateSampleData(subject);
+        startExerciseSession(fallbackData);
+    } finally {
+        document.body.style.cursor = 'default';
+    }
+};
+
+// Funzione helper per avviare la sessione
+function startExerciseSession(data) {
+    try {
+        sessionStorage.setItem('exerciseData', JSON.stringify(data));
+        sessionStorage.setItem('exerciseDataLoaded', 'true');
+        
+        // Vai alla pagina degli esercizi
+        window.location.href = 'exercise.html';
+    } catch (e) {
+        alert("Errore: Impossibile salvare i dati (Memoria piena o file troppo grande).");
+        console.error(e);
+    }
+}
